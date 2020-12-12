@@ -8,7 +8,9 @@ let modules = require('../json/modules.json')
 
 let altIcons = {
 	"Passwords Translated": "Password",
-	"Big Button Translated": "The Button"
+	"Big Button Translated": "The Button",
+	"Who's on First Translated": "Who's on First",
+	"Morse Code Translated": "Morse Code"
 }
 let stingAltManuals = {
 	'Complicated Wires': 'Complicated Wires optimized (Stinggyray)'
