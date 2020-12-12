@@ -13,6 +13,8 @@
 
 	<link rel="stylesheet" href="/css/normalize.css">
 
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+
 	<style>
 		body {
 			max-width: 66em;
@@ -75,6 +77,27 @@
 			background-color: #ffffff;
 			outline: none;
 		}
+		#views button {
+			border: none;
+			text-align: center;
+			text-decoration: none;
+			font-size: 18px;
+			display: inline-block;
+			font-family: 'Trebuchet MS', sans-serif;
+			padding-top: 7px;
+			padding-bottom: 7px;
+			flex: 1;
+			background-color: #ffffff;
+			outline: none;
+		}
+		#menu p {
+			padding: 0;
+			margin: 0;
+		}
+		#views {
+			display: flex;
+			width: 80%;
+		}
 		#menu-container button:hover {
 			background-color: #bbbbbb;
 		}
@@ -91,8 +114,21 @@
 		#manual-list {
 			margin: 0;
 		}
-		#manual-list table, th, td {
-			border: 1px solid rgb(150, 150, 150);
+		#manual-list ul {
+			padding: 0;
+			margin: 0;
+			height: 40px;
+			display: inline-block;
+			column-count: 3;
+		}
+		#manual-list li {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			display: grid;
+			columns: 3;
+			float: left;
+			width: 33%;
 		}
 		.manual-link {
 			height: 100%;
@@ -109,12 +145,13 @@
 			height: 40px;
 			display: flex;
 			align-content: center;
+			border: 1px solid rgb(150, 150, 150);
 		}
 		.module-icon {
 			margin-top: 4px;
 			margin-bottom: 4px;
 			margin-left: 5px;
-			display: block;
+			display: inline;
 		}
 	</style>
 	<script>
@@ -126,33 +163,89 @@
 			document.getElementById(name).classList.add('active-user');
 			lastName = name;
 			if(name === 'sting') {
-				document.getElementById("manual-list").innerHTML = '<tr><th>Sting\'s Modules</th></tr>' +
-					'{{#with modules}}{{#each sting}}<tr><td><div class="module-cell"><div class="module-icon"><img src="icons/{{this}}.png"></div><div class="manual-link"><a href="/{{this}}.html">{{this}}</a></div></div></td></tr>{{/each}}{{/with}}'
+				document.getElementById("manual-list").innerHTML = `{{#with modules}}
+						{{#each sting}}
+						<li>
+						<div class="module-cell">
+							<div class="module-icon">
+								<img src="icons/{{this.iconName}}.png"></div><div class="manual-link">
+							<a href="/{{this.manualLink}}.html">{{this.moduleName}}</a></div></div></li>
+						{{/each}}
+					{{/with}}`
 			} else if (name === 'yoshi') {
-				document.getElementById("manual-list").innerHTML = '<tr><th>Yoshi\'s Modules</th></tr>' +
-					'{{#with modules}}{{#each yoshi}}<tr><td><div class="module-cell"><div class="module-icon"><img src="icons/{{this}}.png"></div><div class="manual-link"><a href="/{{this}}.html">{{this}}</a></div></div></td></tr>{{/each}}{{/with}}'
+				document.getElementById("manual-list").innerHTML = `{{#with modules}}
+					{{#each yoshi}}
+						<li>
+						<div class="module-cell">
+							<div class="module-icon">
+								<img src="icons/{{this.iconName}}.png"></div><div class="manual-link">
+							<a href="/{{this.manualLink}}.html">{{this.moduleName}}</a></div></div></li>
+						{{/each}}
+				{{/with}}`
 			} else if (name === 'emma') {
-				document.getElementById("manual-list").innerHTML = '<tr><th>Emma\'s Modules</th></tr>' +
-					'{{#with modules}}{{#each emma}}<tr><td><div class="module-cell"><div class="module-icon"><img src="icons/{{this}}.png"></div><div class="manual-link"><a href="/{{this}}.html">{{this}}</a></div></div></td></tr>{{/each}}{{/with}}'
+				document.getElementById("manual-list").innerHTML = `{{#with modules}}
+					{{#each emma}}
+						<li>
+						<div class="module-cell">
+							<div class="module-icon">
+								<img src="icons/{{this.iconName}}.png"></div><div class="manual-link">
+							<a href="/{{this.manualLink}}.html">{{this.moduleName}}</a></div></div></li>
+						{{/each}}
+				{{/with}}`
 			} else if (name === 'ps') {
-				document.getElementById("manual-list").innerHTML = '<tr><th>PS\'s Modules</th></tr>' +
-					'{{#with modules}}{{#each ps}}<tr><td><div class="module-cell"><div class="module-icon"><img src="icons/{{this}}.png"></div><div class="manual-link"><a href="/{{this}}.html">{{this}}</a></div></div></td></tr>{{/each}}{{/with}}'
-			}
+				document.getElementById("manual-list").innerHTML = `{{#with modules}}
+					{{#each ps}}
+						<li>
+						<div class="module-cell">
+							<div class="module-icon">
+								<img src="icons/{{this.iconName}}.png"></div><div class="manual-link">
+							<a href="/{{this.manualLink}}.html">{{this.moduleName}}</a></div></div></li>
+						{{/each}}
+				{{/with}}`			}
 
-			document.cookie = "user=" + name;
+			reloadView();
+			Cookies.set('name', name);
 		}
 
-		function loadActivePerson() {
-			if(document.cookie) {
-				console.log("Cookie found.");
-				setActivePerson(document.cookie.split('=')[1]);
+		function loadCookie() {
+			if(Cookies.get('name')) {
+				setActivePerson(Cookies.get('name'));
 			}
+			if(Cookies.get('view')) {
+				setView(Cookies.get('view'));
+			}
+		}
+
+		let lastView = undefined;
+		function setView(view) {
+			if(lastView !== undefined) {
+				document.getElementById(lastView).classList.remove('active-user');
+			}
+			document.getElementById(view).classList.add('active-user');
+			lastView = view;
+			if(view === 'compact') {
+				let listItems = document.getElementById('manual-list').getElementsByTagName('li');
+				for(let i = 0; i < listItems.length; i++){
+					listItems[i].style.width = 'auto';
+				}
+			} else {
+				let listItems = document.getElementById('manual-list').getElementsByTagName('li');
+				for(let i = 0; i < listItems.length; i++){
+					listItems[i].style.width = '33%';
+				}
+			}
+
+			Cookies.set('view', view);
+		}
+
+		function reloadView() {
+			setView(lastView);
 		}
 	</script>
 	<title>Bootleg Repository of Manual Pages</title>
 </head>
 
-<body onload="loadActivePerson()">
+<body onload="loadCookie()">
 	<div class="page-content">
 	<div class="page-top">
 		<div id="logo">
@@ -172,13 +265,19 @@
 					<div class="divider"></div>
 					<button id="ps" onclick="setActivePerson('ps')">PS</button>
 				</div>
+				<br>
+				<p>Views</p>
+				<div id="views">
+					<button id="orderly" onclick="setView('orderly')">Orderly</button>
+					<button id="compact" onclick="setView('compact')">Compact</button>
+				</div>
 			</div>
 		</div>
 	</div>
 	<div class="page-bottom">
-		<table id="manual-list">
+		<ul id="manual-list">
 
-		</table>
+		</ul>
 	</div>
 	</div>
 </body>

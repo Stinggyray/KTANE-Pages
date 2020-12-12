@@ -41,11 +41,13 @@ let phrases = [
 	"Third Base is not the module I was expecting from that name."
 ]
 
+let profiles = require('./profiles.js');
+
 let moduleList = {
-	sting: ['Complicated Wires', '3D Maze', 'Cruel Digital Root', 'Regular Crazy Talk', 'Laundry'],
-	yoshi: ['Complicated Wires', 'Sea Shells', 'Black Hole', 'Cryptography', 'Hyperneedy'],
-	emma: ['Complicated Wires', 'Blind Maze', 'Hexamaze', 'Zoo', 'Chord Qualities'],
-	ps: ['Complicated Wires', 'Morsematics', 'Lousy Chess', 'Orientation Cube', 'Plumbing']
+	sting: profiles('sting'),
+	yoshi: profiles('yoshi'),
+	emma: profiles('emma'),
+	ps: profiles('ps')
 }
 
 module.exports.set = (app) => {
