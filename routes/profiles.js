@@ -2,6 +2,7 @@ let sting = require('../json/profiles/Sting.json')
 let yoshi = require('../json/profiles/Yoshi.json')
 let emma = require('../json/profiles/Emma.json')
 let ps = require('../json/profiles/PS.json')
+let vanillas = require('../json/profiles/Vanilla.json')
 
 let modules = require('../json/modules.json')
 
@@ -39,6 +40,7 @@ sting = transcodeProfile(sting);
 yoshi = transcodeProfile(yoshi);
 emma = transcodeProfile(emma);
 ps = transcodeProfile(ps);
+vanillas = transcodeProfile(vanillas);
 
 module.exports = (name) => {
 	switch(name) {
@@ -46,5 +48,6 @@ module.exports = (name) => {
 		case "yoshi": return yoshi;
 		case "emma": return emma;
 		case "ps": return ps;
+		case "vanillas": return vanillas;
 	}
 }

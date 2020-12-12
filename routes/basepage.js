@@ -47,7 +47,8 @@ let moduleList = {
 	sting: profiles('sting'),
 	yoshi: profiles('yoshi'),
 	emma: profiles('emma'),
-	ps: profiles('ps')
+	ps: profiles('ps'),
+	vanillas: profiles('vanillas')
 }
 
 module.exports.set = (app) => {

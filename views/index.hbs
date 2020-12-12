@@ -96,14 +96,14 @@
 		}
 		#views {
 			display: flex;
-			width: 80%;
+			width: 100%;
 		}
 		#menu-container button:hover {
 			background-color: #bbbbbb;
 		}
 		#menu-container {
 			display: flex;
-			width: 80%;
+			width: 100%;
 			background-color: #ffffff;
 		}
 		#menu-container .divider {
@@ -145,7 +145,6 @@
 			height: 40px;
 			display: flex;
 			align-content: center;
-			border: 1px solid rgb(150, 150, 150);
 		}
 		.module-icon {
 			margin-top: 4px;
@@ -201,9 +200,23 @@
 								<img src="icons/{{this.iconName}}.png"></div><div class="manual-link">
 							<a href="/{{this.manualLink}}.html">{{this.moduleName}}</a></div></div></li>
 						{{/each}}
-				{{/with}}`			}
+				{{/with}}`
+			} else if (name === 'vanillas') {
+				document.getElementById("manual-list").innerHTML = `{{#with modules}}
+					{{#each vanillas}}
+						<li>
+						<div class="module-cell">
+							<div class="module-icon">
+								<img src="icons/{{this.iconName}}.png"></div><div class="manual-link">
+							<a href="/{{this.manualLink}}.html">{{this.moduleName}}</a></div></div></li>
+						{{/each}}
+				{{/with}}`
+			}
 
-			reloadView();
+			if(lastView) {
+				setView(lastView);
+			}
+
 			Cookies.set('name', name);
 		}
 
@@ -211,7 +224,9 @@
 			if(Cookies.get('name')) {
 				setActivePerson(Cookies.get('name'));
 			}
-			if(Cookies.get('view')) {
+			let view = Cookies.get('view');
+			if(view) {
+				console.log(view);
 				setView(Cookies.get('view'));
 			}
 		}
@@ -227,19 +242,16 @@
 				let listItems = document.getElementById('manual-list').getElementsByTagName('li');
 				for(let i = 0; i < listItems.length; i++){
 					listItems[i].style.width = 'auto';
+					listItems[i].style.border = '1px solid rgb(150, 150, 150)';
 				}
-			} else {
+			} else if (view === 'orderly') {
 				let listItems = document.getElementById('manual-list').getElementsByTagName('li');
 				for(let i = 0; i < listItems.length; i++){
 					listItems[i].style.width = '33%';
+					listItems[i].style.border = 'none';
 				}
 			}
-
 			Cookies.set('view', view);
-		}
-
-		function reloadView() {
-			setView(lastView);
 		}
 	</script>
 	<title>Bootleg Repository of Manual Pages</title>
@@ -264,6 +276,8 @@
 					<button id="emma" onclick="setActivePerson('emma')">Emma</button>
 					<div class="divider"></div>
 					<button id="ps" onclick="setActivePerson('ps')">PS</button>
+					<div class="divider"></div>
+					<button id="vanillas" onclick="setActivePerson('vanillas')">Vanillas</button>
 				</div>
 				<br>
 				<p>Views</p>
