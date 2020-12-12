@@ -5,6 +5,12 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+	<meta property="og:title" content="Bootleg Repository of Manual Pages">
+	<meta property="og:description" content="Repository of Manual Pages for KTANE, but worse in every way.">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="http://ktane.stinggy.com">
+	<meta property="og:site_name" content="Bootleg Repository of Manual Pages">
+
 	<link rel="stylesheet" href="/css/normalize.css">
 
 	<style>
@@ -20,33 +26,159 @@
 		}
 
 		#logo {
-			flex-shrink: 1;
+			flex: 1;
 		}
 		#logo img {
 			max-width: 33em;
 		}
 		#title-card {
-			flex-shrink: 1;
+			display: flex;
+			flex-direction: column;
+			flex: 1;
+		}
+
+		#flavor-text {
+			height: 40%;
+		}
+		#menu {
+			flex-grow: 1;
+			font-size: 18px;
 		}
 
 		.page-top {
-			margin-top: 1em;
+			padding-top: 1em;
 			display: flex;
 			flex-direction: row;
 
-			width: 66em;
+			max-width: 66em;
+		}
+		.page-bottom {
+			width: 100%;
+		}
+		.page-content {
+			min-height: 100vh;
+			padding: 0 .7em 10em;
+		}
+		.active-user {
+			background-color: #4CAF50 !important;
+		}
+		#menu-container button {
+			border: none;
+			text-align: center;
+			text-decoration: none;
+			font-size: 24px;
+			display: inline-block;
+			font-family: 'Trebuchet MS', sans-serif;
+			padding-top: 7px;
+			padding-bottom: 7px;
+			flex: 1;
+			background-color: #ffffff;
+			outline: none;
+		}
+		#menu-container button:hover {
+			background-color: #bbbbbb;
+		}
+		#menu-container {
+			display: flex;
+			width: 80%;
+			background-color: #ffffff;
+		}
+		#menu-container .divider {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			border-left: 1px solid #cccccc;
+		}
+		#manual-list {
+			margin: 0;
+		}
+		#manual-list table, th, td {
+			border: 1px solid rgb(150, 150, 150);
+		}
+		.manual-link {
+			height: 100%;
+			justify-content: center;
+			align-items: center;
+			margin-left: 10px;
+			margin-right: 5px;
+			display: flex;
+		}
+		a {
+			color: rgb(150, 150, 150);
+		}
+		.module-cell {
+			height: 40px;
+			display: flex;
+			align-content: center;
+		}
+		.module-icon {
+			margin-top: 4px;
+			margin-bottom: 4px;
+			margin-left: 5px;
+			display: block;
 		}
 	</style>
+	<script>
+		let lastName = undefined;
+		function setActivePerson(name) {
+			if(lastName !== undefined) {
+				document.getElementById(lastName).classList.remove('active-user');
+			}
+			document.getElementById(name).classList.add('active-user');
+			lastName = name;
+			if(name === 'sting') {
+				document.getElementById("manual-list").innerHTML = '<tr><th>Sting\'s Modules</th></tr>' +
+					'{{#with modules}}{{#each sting}}<tr><td><div class="module-cell"><div class="module-icon"><img src="icons/{{this}}.png"></div><div class="manual-link"><a href="/{{this}}.html">{{this}}</a></div></div></td></tr>{{/each}}{{/with}}'
+			} else if (name === 'yoshi') {
+				document.getElementById("manual-list").innerHTML = '<tr><th>Yoshi\'s Modules</th></tr>' +
+					'{{#with modules}}{{#each yoshi}}<tr><td><div class="module-cell"><div class="module-icon"><img src="icons/{{this}}.png"></div><div class="manual-link"><a href="/{{this}}.html">{{this}}</a></div></div></td></tr>{{/each}}{{/with}}'
+			} else if (name === 'emma') {
+				document.getElementById("manual-list").innerHTML = '<tr><th>Emma\'s Modules</th></tr>' +
+					'{{#with modules}}{{#each emma}}<tr><td><div class="module-cell"><div class="module-icon"><img src="icons/{{this}}.png"></div><div class="manual-link"><a href="/{{this}}.html">{{this}}</a></div></div></td></tr>{{/each}}{{/with}}'
+			} else if (name === 'ps') {
+				document.getElementById("manual-list").innerHTML = '<tr><th>PS\'s Modules</th></tr>' +
+					'{{#with modules}}{{#each ps}}<tr><td><div class="module-cell"><div class="module-icon"><img src="icons/{{this}}.png"></div><div class="manual-link"><a href="/{{this}}.html">{{this}}</a></div></div></td></tr>{{/each}}{{/with}}'
+			}
+
+			document.cookie = "user=" + name;
+		}
+
+		function loadActivePerson() {
+			if(document.cookie) {
+				console.log("Cookie found.");
+				setActivePerson(document.cookie.split('=')[1]);
+			}
+		}
+	</script>
 	<title>Bootleg Repository of Manual Pages</title>
 </head>
 
-<body>
+<body onload="loadActivePerson()">
+	<div class="page-content">
 	<div class="page-top">
 		<div id="logo">
 			<img src="img/logo.png" alt="Bootleg Repository of Manual Pages">
 		</div>
 		<div id="title-card">
-			<p><i>{{{phrase}}}</i></p>
+			<div id="flavor-text">
+				<p><i>{{{phrase}}}</i></p>
+			</div>
+			<div id="menu">
+				<div id="menu-container">
+					<button id="sting" onclick="setActivePerson('sting')">Sting</button>
+					<div class="divider"></div>
+					<button id="yoshi" onclick="setActivePerson('yoshi')">Yoshi</button>
+					<div class="divider"></div>
+					<button id="emma" onclick="setActivePerson('emma')">Emma</button>
+					<div class="divider"></div>
+					<button id="ps" onclick="setActivePerson('ps')">PS</button>
+				</div>
+			</div>
 		</div>
+	</div>
+	<div class="page-bottom">
+		<table id="manual-list">
+
+		</table>
+	</div>
 	</div>
 </body>

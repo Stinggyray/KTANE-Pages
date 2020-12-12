@@ -37,12 +37,20 @@ let phrases = [
 	"I am disorder",
 	"Okay Sting, I need you on Double-Oh... wait, why is the display red?",
 	"Don't tell Flaw, but I set the translated modules language to Chinese.",
-	""
+	".. / .... .- - . / -- --- .-. ... . / -.-. --- -.. .",
+	"Third Base is not the module I was expecting from that name."
 ]
+
+let moduleList = {
+	sting: ['Complicated Wires', '3D Maze', 'Cruel Digital Root', 'Regular Crazy Talk', 'Laundry'],
+	yoshi: ['Complicated Wires', 'Sea Shells', 'Black Hole', 'Cryptography', 'Hyperneedy'],
+	emma: ['Complicated Wires', 'Blind Maze', 'Hexamaze', 'Zoo', 'Chord Qualities'],
+	ps: ['Complicated Wires', 'Morsematics', 'Lousy Chess', 'Orientation Cube', 'Plumbing']
+}
 
 module.exports.set = (app) => {
 	app.get('/', (req, res) => {
 		let curPhrase = phrases[Math.floor(Math.random() * phrases.length)];
-		res.render('index', {phrase: curPhrase});
+		res.render('index', {phrase: curPhrase, modules: moduleList});
 	});
 }
