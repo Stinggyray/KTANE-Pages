@@ -95,7 +95,9 @@ let vanillasAltManuals = {
 	'The Button': 'The Button lookup table (Timwi)',
 	"Morse Code": "Morse Code optimized (Timwi)",
 	"Password": "Password optimized (Timwi)",
-	"Wire Sequence": "Wire Sequence colored (Timwi)"
+	"Wire Sequence": "Wire Sequence colored (Timwi)",
+	"Wires": "Wires optimized (Timwi)",
+	"Who's on First": "Who's on First alphabetized (Timwi)"
 }
 
 function transcodeProfile(profile, altManuals) {
