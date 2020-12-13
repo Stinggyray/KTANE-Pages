@@ -86,7 +86,8 @@ let yoshiAltManuals = {
 	"Chess": "Chess optimized (Timwi)",
 	"LED Encryption": "LED Encryption lookup table (JakkOfKlubs)",
 	"Logic": "Logic optimized (LeGeND)",
-	"Neutralization": "Neutralization condensed (samfundev)"
+	"Neutralization": "Neutralization condensed (samfundev)",
+	"Piano Keys": "Piano Keys condensed (LeGeND)"
 }
 let emmaAltManuals = {
 
