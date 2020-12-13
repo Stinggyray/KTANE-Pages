@@ -37,6 +37,7 @@ let universalAltManuals = {
 	"Friendship": "Friendship rearranged (samfundev)",
 	"Hexamaze": "Hexamaze interactive (samfundev)",
 	"Laundry": "Laundry condensed (Stinggyray)",
+	"Letter Keys": "Letter Keys lookup table (Timwi)",
 	"Listening": "Listening interactive (samfundev)",
 	"Memory": "Memory condensed (Timwi)",
 	"Minesweeper": "Minesweeper condensed (Stinggyray)",
