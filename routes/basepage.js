@@ -38,7 +38,9 @@ let phrases = [
 	"Okay Sting, I need you on Double-Oh... wait, why is the display red?",
 	"Don't tell Flaw, but I set the translated modules language to Chinese.",
 	".. / .... .- - . / -- --- .-. ... . / -.-. --- -.. .",
-	"Third Base is not the module I was expecting from that name."
+	"Third Base is not the module I was expecting from that name.",
+	"L' R' R R R' L B' F' B F is your moves for Rubik's Cube... wait.",
+	"You've seen Blind Alley, you've seen Deaf Alley, but have you seen Sensory Deprivation Alley?"
 ]
 
 let profiles = require('./profiles.js');

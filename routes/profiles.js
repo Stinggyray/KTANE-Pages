@@ -82,6 +82,7 @@ let stingAltManuals = {
 }
 let yoshiAltManuals = {
 	"Adventure Game": "Adventure Game condensed (samfundev)",
+	"Chess": "Chess optimized (Timwi)",
 	"LED Encryption": "LED Encryption lookup table (JakkOfKlubs)",
 	"Neutralization": "Neutralization condensed (samfundev)"
 }
