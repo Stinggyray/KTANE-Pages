@@ -22,6 +22,7 @@ let universalAltManuals = {
 	"Alphabet": "Alphabet optimized (Nanthelas)",
 	"Blind Alley": "Blind Alley condensed (Timwi)",
 	"Big Button Translated": "The Button lookup table (Timwi)",
+	"Binary LEDs": "Binary LEDs embellished (ZekNikZ)",
 	"Bitwise Operations": "Bitwise Operations condensed (LeGeND)",
 	"Chess": "Chess interactive (samfundev)",
 	"Colored Squares": "Colored Squares colored (samfundev)",
@@ -29,6 +30,7 @@ let universalAltManuals = {
 	"Combination Lock": "Combination Lock condensed (Stinggyray)",
 	"Coordinates": "Coordinates interactive (samfundev)",
 	"Crazy Talk": "Crazy Talk alphabetized (Timwi)",
+	"Cryptography": "Cryptography optimized (Nanthelas & samfundev & Lebossle)",
 	"Fast Math": "Fast Math condensed (Stinggyray)",
 	"Flags": "Flags colored (JakkOfKlubs)",
 	"Foreign Exchange Rates": "Foreign Exchange Rates optimized (Timwi)",
@@ -45,8 +47,7 @@ let universalAltManuals = {
 	"Piano Keys": "Piano Keys embellished (Rexkix)",
 	"Rock-Paper-Scissors-Lizard-Spock": "Rock-Paper-Scissors-Lizard-Spock embellished (Rexkix)",
 	"Third Base": "Third Base alphabetized (Timwi)",
-	"Who's on First Translated": "Who's on First all languages condensed (S.)",
-	"Binary LEDs": "Binary LEDs embellished (ZekNikZ)"
+	"Who's on First Translated": "Who's on First all languages condensed (S.)"
 }
 let stingAltManuals = {
 	"Adjacent Letters": "Adjacent Letters lookup table (samfundev & Elias)",
