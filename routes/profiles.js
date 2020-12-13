@@ -12,11 +12,48 @@ let altIcons = {
 	"Who's on First Translated": "Who's on First",
 	"Morse Code Translated": "Morse Code"
 }
+let altNames = {
+	"Big Button Translated": "The Button Translated"
+}
+let universalAltManuals = {
+	"Cheap Checkout": "Cheap Checkout optimized (Timwi)",
+	"3D Maze": "3D Maze optimized (Stinggyray)",
+	"Algebra": "Algebra condensed (Stinggyray)",
+	"Alphabet": "Alphabet optimized (Nanthelas)",
+	"Blind Alley": "Blind Alley condensed (Timwi)",
+	"Bitwise Operations": "Bitwise Operations condensed (LeGeND)",
+	"Chess": "Chess interactive (samfundev)",
+	"Colored Squares": "Colored Squares colored (samfundev)",
+	"Colour Flash": "Colour Flash optimized (Stinggyray)",
+	"Combination Lock": "Combination Lock condensed (Stinggyray)"
+}
 let stingAltManuals = {
-	'Complicated Wires': 'Complicated Wires optimized (Stinggyray)'
+	"Adjacent Letters": "Adjacent Letters lookup table (samfundev & Elias)",
+	"Adventure Game": "Adventure Game condensed (samfundev)",
+	"Astrology": "Astrology lookup table (Elias & samfundev)",
+	"Backgrounds": "Backgrounds condensed (ZekNikZ)",
+	"Bitmaps": "Bitmaps condensed (Stinggyray)",
+	"Broken Buttons": "Broken Buttons condensed (Freelancer1025)",
+	"Chess": "Chess optimized (Timwi)",
+	"Cooking": "Cooking condensed (Lebossle)",
+	"Coordinates": "Coordinates optimized (Blananas2)"
+}
+let yoshiAltManuals = {
+
+}
+let emmaAltManuals = {
+
+}
+let psAltManuals = {
+
 }
 
-function transcodeProfile(profile) {
+let vanillasAltManuals = {
+	'Complicated Wires': 'Complicated Wires optimized (Stinggyray)',
+	'The Button': 'The Button lookup table (Timwi)'
+}
+
+function transcodeProfile(profile, altManuals) {
 	let enabledList = profile.EnabledList;
 	enabledList = enabledList.map((s) => modules[s]).sort((a, b) => {
 		function getRaw(s) {
@@ -29,8 +66,8 @@ function transcodeProfile(profile) {
 
 	enabledList.forEach((entry) => {
 		newConstructedList.push({
-			moduleName: entry,
-			manualLink: stingAltManuals[entry] ?? entry,
+			moduleName: altNames[entry] ?? entry,
+			manualLink: altManuals[entry] ?? universalAltManuals[entry] ?? entry,
 			iconName: altIcons[entry] ?? entry
 		})
 	});
@@ -38,11 +75,11 @@ function transcodeProfile(profile) {
 	return newConstructedList;
 }
 
-sting = transcodeProfile(sting);
-yoshi = transcodeProfile(yoshi);
-emma = transcodeProfile(emma);
-ps = transcodeProfile(ps);
-vanillas = transcodeProfile(vanillas);
+sting = transcodeProfile(sting, stingAltManuals);
+yoshi = transcodeProfile(yoshi, yoshiAltManuals);
+emma = transcodeProfile(emma, emmaAltManuals);
+ps = transcodeProfile(ps, psAltManuals);
+vanillas = transcodeProfile(vanillas, vanillasAltManuals);
 
 module.exports = (name) => {
 	switch(name) {

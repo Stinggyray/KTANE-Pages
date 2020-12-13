@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1">
+    <title>Coordinates — Keep Talking and Nobody Explodes Module</title>
+    <link rel="stylesheet" type="text/css" href="css/font.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="js/ktane-utils.js"></script>
+    <style>
+        span.footnote-marker {
+            vertical-align: super;
+            font-size: 70%;
+        }
+        table {
+            border: none;
+        }
+        table.grid {
+            border-collapse: separate;
+            border-spacing: .5mm;
+        }
+        td.corner {
+            border: none;
+        }
+        p.footnote {
+            font-size: 70%;
+        }
+        div.column {
+            float: left;
+            margin: 0 0 .7em;
+        }
+        div.column-1 { width: 37.5%; }
+        div.column-2 { width: 40.5%; }
+        div.column-3 { width: 22%; }
+        h4 {
+            clear: both;
+            margin: .7em 0 .2em;
+        }
+        div.footnotes {
+            position: relative;
+            margin-top: 2em;
+            padding-top: 1em;
+        }
+        div.footnotes:before {
+            border-top: 1px solid black;
+            left: 0;
+            top: 0;
+            position: absolute;
+            width: 50mm;
+            content: '';
+        }
+        table.coordinate-notations th {
+            white-space: nowrap;
+        }
+        table.two-column-groups tr th:not(:first-child) {
+            border-left: 1mm solid black;
+        }
+
+        input {
+            width: 25px;
+        }
+
+        .input-grid, .input-grid td, .input-grid th {
+            border: none;
+            text-align: center;
+        }
+
+        .marked.cell {
+            background-color: rgba(0, 0, 255, 0.25) !important; /* I'm sorry. */
+        }
+
+        .selected, .selected.cell {
+            background-color: rgba(255, 255, 0, 0.5) !important; /* Really sorry. */
+        }
+
+        .grid td {
+            padding: 0px 0px;
+            width: 0px;
+            height: 0px;
+            transition: padding 0.5s, border-color 0.5s, font-size 0.5s, background-color 0.5s;
+            border: 1px solid rgba(0, 0, 0, 0);
+            background-color: rgba(0, 0, 0, 0);
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            font-size: 0;
+            line-height: 0;
+            max-width: 0;
+        }
+
+        .grid td.cell {
+            font-size: initial;
+            padding: 25px 25px;
+            border-color: #222;
+        }
+
+        .grid td span {
+            position: relative;
+            left: -5px;
+        }
+
+        .input {
+            float: left;
+            margin-right: 5px;
+            padding-top: 10px;
+        }
+
+        .input.width, .input.height {
+            padding: 10px;
+        }
+
+        button {
+            font-family: Special Elite;
+            background-color: white;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 5px;
+            border: black 3px solid;
+            transition: 0.3s;
+        }
+
+        button.arrow-down {
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .page-content {
+            position: relative;
+        }
+    </style>
+    <script src="js/jquery.3.1.1.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var grid = $(".grid");
+            var selected;
+            var helm = $(".height");
+            var welm = $(".width");
+
+            $(document).click(function() {
+                selected = null;
+
+                updateSelection();
+            }).keydown(function(event) {
+                if (!selected) {
+                    selected = welm;
+                    updateSelection();
+                }
+
+                var n;
+                if (event.key == "w") {
+                    selected = welm;
+                    updateSelection();
+                } else if (event.key == "h") {
+                    selected = helm;
+                    updateSelection();
+                } else if (selected.hasClass("cell")) {
+                    n = parseInt(event.key);
+                    if (n && n < 9) {
+                        $(".grid td.marked span").each(function() {
+                            if ($(this).text() == n.toString()) {
+                                $(this).text("").parent().removeClass("marked");
+                            }
+                        });
+                        selected.children("span").text(n);
+                        selected.addClass("marked");
+                    } else if (event.key == "Backspace" || event.key == "Delete") {
+                        selected.children("span").text("");
+                        selected.removeClass("marked");
+                    }
+                } else {
+                    n = parseInt(event.key);
+                    if (n) {
+                        selected.text(n);
+                        width = parseInt(welm.text());
+                        height = parseInt(helm.text());
+                        updateGrid();
+
+                        if (selected.is(welm)) {
+                            selected = helm;
+                        } else if (selected.is(helm)) {
+                            selected = welm;
+                        }
+
+                        updateSelection();
+                    }
+                }
+            });
+
+            function updateSelection() {
+                $(".selected").removeClass("selected");
+                if (selected && selected.length > 0) {
+                    selected.addClass("selected");
+                }
+            }
+
+            for (var i = 0; i < 8; i++) {
+                var row = $("<tr>").appendTo(grid);
+                for (var n = 0; n < 8; n++) {
+                    $("<td>").appendTo(row).click(function(event) {
+                        selected = $(this);
+                        updateSelection();
+
+                        event.stopPropagation();
+                    }).contextmenu(function(event) {
+                        var span = $(this).children("span");
+                        if (span.text() == "") {
+                            $(".grid td.marked span").each(function() {
+                                if ($(this).text() == mark.toString()) {
+                                    $(this).text("").parent().removeClass("marked");
+                                }
+                            });
+                            span.text(mark);
+                            mark = Math.min(mark + 1, 8);
+                            $(".mark").text(mark);
+                            $(this).addClass("marked");
+                        } else {
+                            span.text("");
+                            $(this).removeClass("marked");
+                        }
+
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }).append($("<span>"));
+                }
+            }
+
+            var width = parseInt(welm.text());
+            var height = parseInt(helm.text());
+            var mark = 1;
+
+            function updateGrid() {
+                width = Math.min(Math.max(width, 3), 8);
+                height = Math.min(Math.max(height, 3), 8);
+
+                welm.text(width);
+                helm.text(height);
+                grid.children().each(function(index) {
+                    var row = $(this);
+                    row.children().each(function(index2) {
+                        $(this).toggleClass("cell", index2 < width && index < height);
+                    });
+                });
+            }
+            updateGrid();
+
+            $(".width, .height").click(function(event) {
+                selected = $(this);
+                updateSelection();
+
+                event.stopPropagation();
+            });
+
+            function resetGrid() {
+                $(".marked").removeClass("marked").children("span").text("");
+            }
+
+            $(".reset").click(function() {
+                $(".width, .height").text(5);
+                width = 5;
+                height = 5;
+                updateGrid();
+                resetGrid();
+            });
+
+            $(".reset-grid").click(function() {
+                resetGrid();
+            });
+
+            $(".arrow-up").click(function() {
+                height--;
+                updateGrid();
+            });
+
+            $(".arrow-down").click(function() {
+                height++;
+                updateGrid();
+            });
+
+            $(".arrow-left").click(function() {
+                width--;
+                updateGrid();
+            });
+
+            $(".arrow-right").click(function() {
+                width++;
+                updateGrid();
+            });
+
+            $(".mark-down").click(function() {
+                if (mark > 1) {
+                    mark--;
+                    $(".mark").text(mark);
+                }
+            });
+
+            $(".mark-up").click(function() {
+                if (mark < 8) {
+                    mark++;
+                    $(".mark").text(mark);
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="section">
+        <div class="page page-bg-01">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Coordinates</span>
+            </div>
+            <div class="page-content">
+                <img class="diagram" src="img/Component/Coordinates.svg">
+                <h2>On the Subject of Clinching Coordinates</h2>
+
+                <p class="flavour-text">Because people need to see to understand.</p>
+                <table style="text-align: center;">
+                    <tr>
+                        <td style="background-color: rgb(152, 0, 0)">[0,0]</td>
+                        <td style="background-color: rgb(230, 184, 175)">[1,0]</td>
+                        <td style="background-color: rgb(230, 184, 175)">[2,0]</td>
+                        <td style="background-color: rgb(255, 0, 0)">
+                            &lt;0,0&gt;
+                        </td>
+                        <td style="background-color: rgb(244, 204, 204)">
+                            &lt;0,1&gt;
+                        </td>
+                        <td style="background-color: rgb(244, 204, 204)">
+                            &lt;0,2&gt;
+                        </td>
+                        <td style="background-color: rgb(252, 229, 205)">(0,2)</td>
+                        <td style="background-color: rgb(252, 229, 205)">(1,2)</td>
+                        <td style="background-color: rgb(252, 229, 205)">(2,2)</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: rgb(230, 184, 175)">[0,1]</td>
+                        <td style="background-color: rgb(230, 184, 175)">[1,1]</td>
+                        <td style="background-color: rgb(230, 184, 175)">[2,1]</td>
+                        <td style="background-color: rgb(244, 204, 204)">&lt;1,0&gt;</td>
+                        <td style="background-color: rgb(244, 204, 204)">&lt;1,1&gt;</td>
+                        <td style="background-color: rgb(244, 204, 204)">&lt;1,2&gt;</td>
+                        <td style="background-color: rgb(252, 229, 205)">(0,1)</td>
+                        <td style="background-color: rgb(252, 229, 205)">(1,1)</td>
+                        <td style="background-color: rgb(252, 229, 205)">(2,1)</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: rgb(230, 184, 175)">[0,2]</td>
+                        <td style="background-color: rgb(230, 184, 175)">[1,2]</td>
+                        <td style="background-color: rgb(230, 184, 175)">[2,2]</td>
+                        <td style="background-color: rgb(244, 204, 204)">&lt;2,0&gt;</td>
+                        <td style="background-color: rgb(244, 204, 204)">&lt;2,1&gt;</td>
+                        <td style="background-color: rgb(244, 204, 204)">&lt;2,2&gt;</td>
+                        <td style="background-color: rgb(255, 153, 0)">(0,0)</td>
+                        <td style="background-color: rgb(252, 229, 205)">(1,0)</td>
+                        <td style="background-color: rgb(252, 229, 205)">(2,0)</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: rgb(255, 242, 204)">"2,0"</td>
+                        <td style="background-color: rgb(255, 242, 204)">"2,1"</td>
+                        <td style="background-color: rgb(255, 242, 204)">"2,2"</td>
+                        <td style="background-color: rgb(0, 255, 0)">[0]</td>
+                        <td style="background-color: rgb(217, 234, 211)">[1]</td>
+                        <td style="background-color: rgb(217, 234, 211)">[2]</td>
+                        <td style="background-color: rgb(208, 224, 227)">#7</td>
+                        <td style="background-color: rgb(208, 224, 227)">#8</td>
+                        <td style="background-color: rgb(208, 224, 227)">#9</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: rgb(255, 242, 204)">"1,0"</td>
+                        <td style="background-color: rgb(255, 242, 204)">"1,1"</td>
+                        <td style="background-color: rgb(255, 242, 204)">"1,2"</td>
+                        <td style="background-color: rgb(217, 234, 211)">[3]</td>
+                        <td style="background-color: rgb(217, 234, 211)">[4]</td>
+                        <td style="background-color: rgb(217, 234, 211)">[5]</td>
+                        <td style="background-color: rgb(208, 224, 227)">#4</td>
+                        <td style="background-color: rgb(208, 224, 227)">#5</td>
+                        <td style="background-color: rgb(208, 224, 227)">#6</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: rgb(255, 255, 0)">"0,0"</td>
+                        <td style="background-color: rgb(255, 242, 204)">"0,1"</td>
+                        <td style="background-color: rgb(255, 242, 204)">"0,2"</td>
+                        <td style="background-color: rgb(217, 234, 211)">[6]</td>
+                        <td style="background-color: rgb(217, 234, 211)">[7]</td>
+                        <td style="background-color: rgb(217, 234, 211)">[8]</td>
+                        <td style="background-color: rgb(0, 255, 255)">#1</td>
+                        <td style="background-color: rgb(208, 224, 227)">#2</td>
+                        <td style="background-color: rgb(208, 224, 227)">#3</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: rgb(74, 134, 232)">A1</td>
+                        <td style="background-color: rgb(208, 218,248)">B1</td>
+                        <td style="background-color: rgb(208, 218,248)">C1</td>
+                        <td style="background-color: rgb(0, 0, 255)">1,1</td>
+                        <td style="background-color: rgb(217, 226, 243)">1,2</td>
+                        <td style="background-color: rgb(217, 226, 243)">1,3</td>
+                        <td style="background-color: rgb(217, 210, 233)">A-3</td>
+                        <td style="background-color: rgb(217, 210, 233)">B-3</td>
+                        <td style="background-color: rgb(217, 210, 233)">C-3</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: rgb(208, 218,248)">A2</td>
+                        <td style="background-color: rgb(208, 218,248)">B2</td>
+                        <td style="background-color: rgb(208, 218,248)">C2</td>
+                        <td style="background-color: rgb(217, 226, 243)">2,1</td>
+                        <td style="background-color: rgb(217, 226, 243)">2,2</td>
+                        <td style="background-color: rgb(217, 226, 243)">2,3</td>
+                        <td style="background-color: rgb(217, 210, 233)">A-2</td>
+                        <td style="background-color: rgb(217, 210, 233)">B-2</td>
+                        <td style="background-color: rgb(217, 210, 233)">C-2</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: rgb(208, 218,248)">A3</td>
+                        <td style="background-color: rgb(208, 218,248)">B3</td>
+                        <td style="background-color: rgb(208, 218,248)">C3</td>
+                        <td style="background-color: rgb(217, 226, 243)">3,1</td>
+                        <td style="background-color: rgb(217, 226, 243)">3,2</td>
+                        <td style="background-color: rgb(217, 226, 243)">3,3</td>
+                        <td style="background-color: rgb(153, 0, 255)">A-1</td>
+                        <td style="background-color: rgb(217, 210, 233)">B-1</td>
+                        <td style="background-color: rgb(217, 210, 233)">C-1</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: rgb(234, 209, 220)">3/1</td>
+                        <td style="background-color: rgb(234, 209, 220)">3/2</td>
+                        <td style="background-color: rgb(234, 209, 220)">3/3</td>
+                        <td style="background-color: rgb(153, 153, 153)">1st</td>
+                        <td style="background-color: rgb(217, 217, 217)">2nd</td>
+                        <td style="background-color: rgb(217, 217, 217)">3rd</td>
+                        <td style="background-color: rgb(255, 255, 255)">七</td>
+                        <td style="background-color: rgb(255, 255, 255)">四</td>
+                        <td style="background-color: rgb(217, 217, 217)">一</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: rgb(234, 209, 220)">2/1</td>
+                        <td style="background-color: rgb(234, 209, 220)">2/2</td>
+                        <td style="background-color: rgb(234, 209, 220)">2/3</td>
+                        <td style="background-color: rgb(217, 217, 217)">4th</td>
+                        <td style="background-color: rgb(217, 217, 217)">5th</td>
+                        <td style="background-color: rgb(217, 217, 217)">6th</td>
+                        <td style="background-color: rgb(255, 255, 255)">八</td>
+                        <td style="background-color: rgb(255, 255, 255)">五</td>
+                        <td style="background-color: rgb(255, 255, 255)">二</td>
+                    </tr>
+                    <tr>
+                        <td style="background-color: rgb(255, 0, 255)">1/1</td>
+                        <td style="background-color: rgb(234, 209, 220)">1/2</td>
+                        <td style="background-color: rgb(234, 209, 220)">1/3</td>
+                        <td style="background-color: rgb(217, 217, 217)">7th</td>
+                        <td style="background-color: rgb(217, 217, 217)">8th</td>
+                        <td style="background-color: rgb(217, 217, 217)">9th</td>
+                        <td style="background-color: rgb(255, 255, 255)">九</td>
+                        <td style="background-color: rgb(255, 255, 255)">六</td>
+                        <td style="background-color: rgb(255, 255, 255)">三</td>
+                    </tr>
+                </table>
+                <br>
+                <table class="input-grid">
+                    <tr>
+                        <th>Marker</th>
+                        <td><button class="mark-down">←</button></td>
+                        <td><span class="mark">1</span></td>
+                        <td><button class="mark-up">→</button></td>
+                    </tr>
+                    <tr>
+                        <th>Grid Size</th>
+                        <td>Width</td>
+                        <th class="width">5</th>
+                        <td>Height</td>
+                        <th class="height">5</th>
+                    </tr>
+                </table>
+                <div style="margin-left: 50px; margin-bottom: 10px; margin-top: 30px;">
+                    <button class="arrow-left">←</button> <button class="arrow-right">→</button>
+                </div>
+                <div style="float: left; margin-right: 10px">
+                    <button class="arrow-up" style="margin-top: 0px;">↑</button>
+                    <br>
+                    <button class="arrow-down">↓</button>
+                </div>
+                <table class="grid"></table>
+                <br>
+                <button class="reset-grid">Reset Grid</button>
+                <button class="reset">Reset</button>
+            </div>
+            <div class="page-footer relative-footer">Page 1 of 2</div>
+        </div>
+        <div class="page page-bg-02">
+            <div class="page-header">
+                <span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+                <span class="page-header-section-title">Coordinates</span>
+            </div>
+            <div class="page-content">
+                <table style="text-align: center;">
+                    <tr>
+                        <th>Format</th>
+                        <th colspan="12">How to interpret</th>
+                    </tr>
+                    <tr>
+                        <th>n [w×h]</th>
+                        <th>9</th>
+                        <td>3×3</td>
+                        <th>15</th>
+                        <td>5×3</td>
+                        <th>21</th>
+                        <td>7×3</td>
+                        <th>25</th>
+                        <td>5×5</td>
+                        <th>35</th>
+                        <td>7×5</td>
+                        <th>49</th>
+                        <td>7×7</td>
+                    </tr>
+                    <tr>
+                        <th>(n) [w×h]</th>
+                        <th>9</th>
+                        <td>3×3</td>
+                        <th>15</th>
+                        <td>3×5</td>
+                        <th>21</th>
+                        <td>3×7</td>
+                        <th>25</th>
+                        <td>5×5</td>
+                        <th>35</th>
+                        <td>5×7</td>upd
+                        <th>49</th>
+                        <td>7×7</td>
+                    </tr>
+                    <tr>
+                        <th>w×h</th>
+                        <td colspan="12">w is the width, h the height of the grid.</td>
+                    </tr>
+                    <tr>
+                        <th>h by w</th>
+                        <td colspan="12">h is the height, w the width of the grid.</td>
+                    </tr>
+                    <tr>
+                        <th>n*h</th>
+                        <td colspan="12">n is the total size of the grid, w = n / h.</td>
+                    </tr>
+                    <tr>
+                        <th>n : w</th>
+                        <td colspan="12">n is the total size of the grid, h = n / w.</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="page-footer relative-footer">Page 2 of 2</div>
+        </div>
+    </div>
+</body>
+
+</html>
