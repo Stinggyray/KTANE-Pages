@@ -21,6 +21,7 @@ let universalAltManuals = {
 	"Algebra": "Algebra condensed (Stinggyray)",
 	"Alphabet": "Alphabet optimized (Nanthelas)",
 	"Big Button Translated": "The Button lookup table (Timwi)",
+	"Big Circle": "Big Circle condensed (Stinggyray)",
 	"Binary LEDs": "Binary LEDs embellished (ZekNikZ)",
 	"Blind Alley": "Blind Alley condensed (Timwi)",
 	"Boolean Venn Diagram": "Boolean Venn Diagram interactive (samfundev)",
@@ -47,6 +48,7 @@ let universalAltManuals = {
 	"Orientation Cube": "Orientation Cube optimized (CaitSith2)",
 	"Passwords Translated": "Password all languages condensed (S.)",
 	"Piano Keys": "Piano Keys embellished (Rexkix)",
+	"Probing": "Probing condensed (Stinggyray)",
 	"Rock-Paper-Scissors-Lizard-Spock": "Rock-Paper-Scissors-Lizard-Spock embellished (Rexkix)",
 	"Switches": "Switches optimized (Nanthelas)",
 	"Third Base": "Third Base alphabetized (Timwi)",
@@ -82,6 +84,7 @@ let stingAltManuals = {
 	"The Gamepad": "The Gamepad lookup table (Timwi)",
 	"The Jukebox": "The Jukebox optimized (Timwi)",
 	"Two Bits": "Two Bits optimized (Nanthelas)",
+	"Waste Management": "Waste Management in code form (Timwi & Stinggyray)",
 	"Web Design": "Web Design optimized (samfundev)",
 	"Word Search": "Word Search lookup table (Elias)"
 }
