@@ -85,7 +85,9 @@ let stingAltManuals = {
 }
 let yoshiAltManuals = {
 	"Adventure Game": "Adventure Game condensed (samfundev)",
+	"Astrology": "Astrology lookup table (Elias & samfundev)",
 	"Chess": "Chess optimized (Timwi)",
+	"Connection Check": "Connection Check optimized (Elias)",
 	"LED Encryption": "LED Encryption lookup table (JakkOfKlubs)",
 	"Logic": "Logic optimized (LeGeND)",
 	"Neutralization": "Neutralization condensed (samfundev)",
