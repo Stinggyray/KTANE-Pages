@@ -88,12 +88,15 @@ let yoshiAltManuals = {
 	"Astrology": "Astrology lookup table (Elias & samfundev)",
 	"Chess": "Chess optimized (Timwi)",
 	"Connection Check": "Connection Check optimized (Elias)",
+	"Follow the Leader": "Follow the Leader condensed (Nanthelas)",
 	"LED Encryption": "LED Encryption lookup table (JakkOfKlubs)",
 	"Logic": "Logic optimized (LeGeND)",
 	"Neutralization": "Neutralization condensed (samfundev)",
 	"Piano Keys": "Piano Keys condensed (LeGeND)",
 	"Plumbing": "Plumbing condensed (Timwi)",
 	"Square Button": "Square Button optimized (Timwi)",
+	"The Festive Jukebox": "The Festive Jukebox optimized (Timwi)",
+	"The Jukebox": "The Jukebox optimized (Timwi)",
 	"Tic Tac Toe": "Tic Tac Toe optimized (samfundev)"
 }
 let emmaAltManuals = {
