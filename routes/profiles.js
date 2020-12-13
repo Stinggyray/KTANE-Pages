@@ -47,6 +47,7 @@ let universalAltManuals = {
 	"Passwords Translated": "Password all languages condensed (S.)",
 	"Piano Keys": "Piano Keys embellished (Rexkix)",
 	"Rock-Paper-Scissors-Lizard-Spock": "Rock-Paper-Scissors-Lizard-Spock embellished (Rexkix)",
+	"Switches": "Switches optimized (Nanthelas)",
 	"Third Base": "Third Base alphabetized (Timwi)",
 	"Who's on First Translated": "Who's on First all languages condensed (S.)",
 	"Wire Placement": "Wire Placement embellished (Timwi)"
@@ -75,7 +76,6 @@ let stingAltManuals = {
 	"Safety Safe": "Safety Safe condensed (samfundev & Stinggyray)",
 	"Simon Screams": "Simon Screams condensed fixed (samfundev)",
 	"Simon States": "Simon States condensed (Nanthelas)",
-	"Switches": "Switches optimized (Nanthelas)",
 	"The Bulb": "The Bulb lookup table (Elias)",
 	"The Festive Jukebox": "The Festive Jukebox optimized (Timwi)",
 	"The Gamepad": "The Gamepad lookup table (Timwi)",
