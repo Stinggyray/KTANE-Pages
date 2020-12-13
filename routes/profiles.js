@@ -89,6 +89,7 @@ let yoshiAltManuals = {
 	"Logic": "Logic optimized (LeGeND)",
 	"Neutralization": "Neutralization condensed (samfundev)",
 	"Piano Keys": "Piano Keys condensed (LeGeND)",
+	"Plumbing": "Plumbing condensed (Timwi)",
 	"Square Button": "Square Button optimized (Timwi)"
 }
 let emmaAltManuals = {
