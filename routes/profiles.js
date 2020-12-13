@@ -25,7 +25,15 @@ let universalAltManuals = {
 	"Chess": "Chess interactive (samfundev)",
 	"Colored Squares": "Colored Squares colored (samfundev)",
 	"Colour Flash": "Colour Flash optimized (Stinggyray)",
-	"Combination Lock": "Combination Lock condensed (Stinggyray)"
+	"Combination Lock": "Combination Lock condensed (Stinggyray)",
+	"Coordinates": "Coordinates interactive (samfundev)",
+	"Crazy Talk": "Crazy Talk alphabetized (Timwi)",
+	"Fast Math": "Fast Math condensed (Stinggyray)",
+	"Flags": "Flags colored (JakkOfKlubs)",
+	"Foreign Exchange Rates": "Foreign Exchange Rates optimized (Timwi)",
+	"Friendship": "Friendship rearranged (samfundev)",
+	"Hexamaze": "Hexamaze interactive (samfundev)",
+	"Laundry": "Laundry condensed (Stinggyray)"
 }
 let stingAltManuals = {
 	"Adjacent Letters": "Adjacent Letters lookup table (samfundev & Elias)",
@@ -36,7 +44,10 @@ let stingAltManuals = {
 	"Broken Buttons": "Broken Buttons condensed (Freelancer1025)",
 	"Chess": "Chess optimized (Timwi)",
 	"Cooking": "Cooking condensed (Lebossle)",
-	"Coordinates": "Coordinates optimized (Blananas2)"
+	"Coordinates": "Coordinates optimized (Blananas2)",
+	"Creation": "Creation lookup table (JakkOfKlubs & Stinggyray)",
+	"Double-Oh": "Double-Oh embellished (samfundev)",
+	"Flags": "Flags optimized (Timwi)"
 }
 let yoshiAltManuals = {
 

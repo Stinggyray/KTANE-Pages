@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1">
+	<title>Laundry — Keep Talking and Nobody Explodes Module</title>
+	<link rel="stylesheet" type="text/css" href="css/font.css">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="js/ktane-utils.js"></script>
+	<style>
+		p.strong {
+			font-weight: bold;
+		}
+		table.laundry {
+			width: 100%;
+		}
+		table.laundry td {
+			white-space: nowrap;
+		}
+		table.reference {
+			table-layout: fixed;
+			width: 100%;
+			border: none;
+		}
+		table.reference col {
+			width: 12.5%;
+		}
+		table.reference td {
+			text-align: center;
+			vertical-align: top;
+			padding: 0;
+			border: none;
+		}
+		table.reference td div.label {
+			font-size: 8pt;
+		}
+		h4 {
+			margin: 1.5em 0 .5em;
+			text-align: center;
+		}
+		h4.reference {
+			margin-bottom: 0;
+		}
+		table {
+			border: none;
+		}
+		.corner {
+			border: none;
+		}
+	</style>
+</head>
+<body>
+<div class="section">
+	<div class="page page-bg-02">
+		<div class="page-header">
+			<span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+			<span class="page-header-section-title">Laundry</span>
+		</div>
+		<div class="page-content">
+			<img src="img/Component/Laundry.svg" class="diagram">
+			<h2>On the Subject of Money Laundering</h2>
+			<p class="flavour-text">What? How do you think they got the money to build a bomb factory?</p>
+
+			<h3>Item Determination</h3>
+			<ul>
+				<li><strong>Item:</strong> Unsolved Modules (excluding needy) + Indicators</li>
+				<li><strong>Material:</strong> Ports + Solved Modules - Holders</li>
+				<li><strong>Color:</strong> Last Digit of SN + Batteries</li>
+			</ul>
+			<h3>Rules and Tables</h3>
+
+			<div class="table-container">
+				<table style="float: right; margin-right: 5em;">
+					<tr><th>#</th><th>Material</th></tr>
+					<tr><td>0</td><td>Polyester</td></tr>
+					<tr><td>1</td><td>Cotton</td></tr>
+					<tr><td>2</td><td>Wool</td></tr>
+					<tr><td>3</td><td>Nylon</td></tr>
+					<tr><td>4</td><td>Corduroy</td></tr>
+					<tr><td>5</td><td>Leather</td></tr>
+				</table>
+				<table>
+					<tr><th colspan="2">Special Instructions</th></tr>
+					<tr><td>Color 4</td><td>No Chlorine</td></tr>
+					<tr><td>Item 0 or Material 4</td><td>Based on Material</td></tr>
+					<tr><td>Letter of Material matches SN</td><td>Based on Color</td></tr>
+					<tr><td>Else</td><td>Based on Item</td></tr>
+				</table>
+			</div>
+			<br>
+			<table>
+				<tr><th colspan="2">Washing Instructions</th><th colspan="2">Drying Instructions</th></tr>
+				<tr><td>Color 3</td><td><img src="img/Laundry/30°C or 80°F.png" alt="30°C" style="width: 80px;"></td><td>Material 2</td><td><img src="img/Laundry/high heat.png" alt="high heat" style="width: 80px;"></td></tr>
+			</table>
+
+			<p class='strong'>
+				Input the solution through putting The Washing Symbol top-left, The Drying
+				top-right, Ironing on the top display and Special on the bottom display.
+			</p>
+
+			<table style="width: 50%">
+				<tr><th>Item</th><th>Ironing</th><th>Special</th></tr>
+				<tr><td>0</td><td>300°F</td><td>Bleach</td></tr>
+				<tr><td>1</td><td>No Steam</td><td>No Tetrachlore</td></tr>
+				<tr><td>2</td><td>Iron</td><td>Reduced Moist</td></tr>
+				<tr><td>3</td><td>200°C</td><td>Bleach</td></tr>
+				<tr><td>4</td><td>300°F</td><td>Don't Bleach</td></tr>
+				<tr><td>5</td><td>110°C</td><td>Don't Dryclean</td></tr>
+			</table>
+		</div>
+		<div class="page-footer relative-footer">Page 1 of 2</div>
+	</div>
+	<div class="page page-bg-03">
+		<div class="page-header">
+			<span class="page-header-doc-title">Keep Talking and Nobody Explodes Mod</span>
+			<span class="page-header-section-title">Laundry</span>
+		</div>
+		<div class="page-content">
+			<div class="table-container">
+			<table style="width: 45%; float: right;">
+				<tr><th>Color</th><th>Drying</th><th>Special</th></tr>
+				<tr><td>0</td><td><img src="img/Laundry/high heat.png" alt="high heat" style="width: 80px;"></td><td>Bleach</td></tr>
+				<tr><td>1</td><td><img src="img/Laundry/high heat.png" alt="high heat" style="width: 80px;"></td><td>No Tetrachlore</td></tr>
+				<tr><td>2</td><td><img src="img/Laundry/tumble dry.png" alt="tumble dry" style="width: 80px;"></td><td>Reduced Moist</td></tr>
+				<tr><td>3</td><td><img src="img/Laundry/do not tumble dry.png" alt="do not tumble dry" style="width: 80px;"></td><td>Bleach</td></tr>
+				<tr><td>4</td><td><img src="img/Laundry/low heat.png" alt="low heat" style="width: 80px;"></td><td>No Chlorine</td></tr>
+				<tr><td>5</td><td><img src="img/Laundry/medium heat.png" alt="medium heat" style="width: 80px;"></td><td>No Chlorine</td></tr>
+			</table>
+			<table style="width: 45%;">
+				<tr><th>Material</th><th>Washing</th><th>Special</th></tr>
+				<tr><td>0</td><td><img src="img/Laundry/50°C or 120°F.png" alt="50°C or 120°F" style="width: 80px;"></td><td>Petroleum Only</td></tr>
+				<tr><td>1</td><td><img src="img/Laundry/95°C or 200°F.png" alt="95°C or 200°F" style="width: 80px;"></td><td>Don't Dryclean</td></tr>
+				<tr><td>2</td><td><img src="img/Laundry/hand wash.png" alt="hand wash" style="width: 80px;"></td><td>Reduced Moist</td></tr>
+				<tr><td>3</td><td><img src="img/Laundry/30°C or 80°F.png" alt="30°C or 80°F" style="width: 80px;"></td><td>Low Heat</td></tr>
+				<tr><td>4</td><td><img src="img/Laundry/40°C or 105°F.png" alt="40°C or 105°F" style="width: 80px;"></td><td>Wet Cleaning</td></tr>
+				<tr><td>5</td><td><img src="img/Laundry/30°C or 80°F.png" alt="30°C or 80°F" style="width: 80px;"></td><td>No Tetrachlore</td></tr>
+			</table>
+			</div>
+		</div>
+		<div class="page-footer relative-footer">Page 2 of 2</div>
+	</div>
+</div>
+</body>
+</html>
