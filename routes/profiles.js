@@ -47,7 +47,8 @@ let universalAltManuals = {
 	"Piano Keys": "Piano Keys embellished (Rexkix)",
 	"Rock-Paper-Scissors-Lizard-Spock": "Rock-Paper-Scissors-Lizard-Spock embellished (Rexkix)",
 	"Third Base": "Third Base alphabetized (Timwi)",
-	"Who's on First Translated": "Who's on First all languages condensed (S.)"
+	"Who's on First Translated": "Who's on First all languages condensed (S.)",
+	"Wire Placement": "Wire Placement embellished (Timwi)"
 }
 let stingAltManuals = {
 	"Adjacent Letters": "Adjacent Letters lookup table (samfundev & Elias)",
