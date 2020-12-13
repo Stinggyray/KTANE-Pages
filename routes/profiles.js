@@ -99,7 +99,8 @@ let yoshiAltManuals = {
 	"Square Button": "Square Button optimized (Timwi)",
 	"The Festive Jukebox": "The Festive Jukebox optimized (Timwi)",
 	"The Jukebox": "The Jukebox optimized (Timwi)",
-	"Tic Tac Toe": "Tic Tac Toe optimized (samfundev)"
+	"Tic Tac Toe": "Tic Tac Toe optimized (samfundev)",
+	"Two Bits": "Two Bits optimized (Nanthelas)"
 }
 let emmaAltManuals = {
 
