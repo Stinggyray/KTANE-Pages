@@ -45,7 +45,8 @@ let universalAltManuals = {
 	"Piano Keys": "Piano Keys embellished (Rexkix)",
 	"Rock-Paper-Scissors-Lizard-Spock": "Rock-Paper-Scissors-Lizard-Spock embellished (Rexkix)",
 	"Third Base": "Third Base alphabetized (Timwi)",
-	"Who's on First Translated": "Who's on First all languages condensed (S.)"
+	"Who's on First Translated": "Who's on First all languages condensed (S.)",
+	"Binary LEDs": "Binary LEDs embellished (ZekNikZ)"
 }
 let stingAltManuals = {
 	"Adjacent Letters": "Adjacent Letters lookup table (samfundev & Elias)",
@@ -80,6 +81,7 @@ let stingAltManuals = {
 	"Word Search": "Word Search lookup table (Elias)"
 }
 let yoshiAltManuals = {
+	"Adventure Game": "Adventure Game condensed (samfundev)",
 	"LED Encryption": "LED Encryption lookup table (JakkOfKlubs)",
 	"Neutralization": "Neutralization condensed (samfundev)"
 }
