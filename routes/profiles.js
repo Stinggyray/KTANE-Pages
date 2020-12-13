@@ -87,7 +87,8 @@ let yoshiAltManuals = {
 	"LED Encryption": "LED Encryption lookup table (JakkOfKlubs)",
 	"Logic": "Logic optimized (LeGeND)",
 	"Neutralization": "Neutralization condensed (samfundev)",
-	"Piano Keys": "Piano Keys condensed (LeGeND)"
+	"Piano Keys": "Piano Keys condensed (LeGeND)",
+	"Square Button": "Square Button optimized (Timwi)"
 }
 let emmaAltManuals = {
 
