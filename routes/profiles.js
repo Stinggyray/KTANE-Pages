@@ -91,7 +91,8 @@ let yoshiAltManuals = {
 	"Neutralization": "Neutralization condensed (samfundev)",
 	"Piano Keys": "Piano Keys condensed (LeGeND)",
 	"Plumbing": "Plumbing condensed (Timwi)",
-	"Square Button": "Square Button optimized (Timwi)"
+	"Square Button": "Square Button optimized (Timwi)",
+	"Tic Tac Toe": "Tic Tac Toe optimized (samfundev)"
 }
 let emmaAltManuals = {
 
