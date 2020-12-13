@@ -21,6 +21,7 @@ let universalAltManuals = {
 	"Algebra": "Algebra condensed (Stinggyray)",
 	"Alphabet": "Alphabet optimized (Nanthelas)",
 	"Blind Alley": "Blind Alley condensed (Timwi)",
+	"Big Button Translated": "The Button lookup table (Timwi)",
 	"Bitwise Operations": "Bitwise Operations condensed (LeGeND)",
 	"Chess": "Chess interactive (samfundev)",
 	"Colored Squares": "Colored Squares colored (samfundev)",
@@ -33,7 +34,18 @@ let universalAltManuals = {
 	"Foreign Exchange Rates": "Foreign Exchange Rates optimized (Timwi)",
 	"Friendship": "Friendship rearranged (samfundev)",
 	"Hexamaze": "Hexamaze interactive (samfundev)",
-	"Laundry": "Laundry condensed (Stinggyray)"
+	"Laundry": "Laundry condensed (Stinggyray)",
+	"Listening": "Listening interactive (samfundev)",
+	"Memory": "Memory condensed (Timwi)",
+	"Minesweeper": "Minesweeper condensed (Stinggyray)",
+	"Monsplode, Fight!": "Monsplode, Fight! colored",
+	"Morse Code Translated": "Morse Code all languages condensed (S.)",
+	"Orientation Cube": "Orientation Cube optimized (CaitSith2)",
+	"Passwords Translated": "Password all languages condensed (S.)",
+	"Piano Keys": "Piano Keys embellished (Rexkix)",
+	"Rock-Paper-Scissors-Lizard-Spock": "Rock-Paper-Scissors-Lizard-Spock embellished (Rexkix)",
+	"Third Base": "Third Base alphabetized (Timwi)",
+	"Who's on First Translated": "Who's on First all languages condensed (S.)"
 }
 let stingAltManuals = {
 	"Adjacent Letters": "Adjacent Letters lookup table (samfundev & Elias)",
@@ -47,10 +59,26 @@ let stingAltManuals = {
 	"Coordinates": "Coordinates optimized (Blananas2)",
 	"Creation": "Creation lookup table (JakkOfKlubs & Stinggyray)",
 	"Double-Oh": "Double-Oh embellished (samfundev)",
-	"Flags": "Flags optimized (Timwi)"
+	"Flags": "Flags optimized (Timwi)",
+	"Logic": "Logic optimized (Stinggyray)",
+	"Mafia": "Mafia optimized (Timwi)",
+	"Microcontroller": "Microcontroller optimized (Elias)",
+	"Morsematics": "Morsematics optimized (samfundev)",
+	"Perspective Pegs": "Perspective Pegs condensed (Stinggyray)",
+	"Plumbing": "Plumbing condensed (Timwi)",
+	"Resistors": "Resistors condensed (Nanthelas)",
+	"Safety Safe": "",
+	"The Bulb": "The Bulb lookup table (Elias)",
+	"The Festive Jukebox": "The Festive Jukebox optimized (Timwi)",
+	"The Gamepad": "The Gamepad lookup table (Timwi)",
+	"The Jukebox": "The Jukebox optimized (Timwi)",
+	"Two Bits": "Two Bits optimized (Nanthelas)",
+	"Web Design": "Web Design optimized (samfundev)",
+	"Word Search": "Word Search lookup table (Elias)"
 }
 let yoshiAltManuals = {
-
+	"LED Encryption": "LED Encryption lookup table (JakkOfKlubs)",
+	"Neutralization": "Neutralization condensed (samfundev)"
 }
 let emmaAltManuals = {
 
@@ -61,7 +89,10 @@ let psAltManuals = {
 
 let vanillasAltManuals = {
 	'Complicated Wires': 'Complicated Wires optimized (Stinggyray)',
-	'The Button': 'The Button lookup table (Timwi)'
+	'The Button': 'The Button lookup table (Timwi)',
+	"Morse Code": "Morse Code optimized (Timwi)",
+	"Password": "Password optimized (Timwi)",
+	"Wire Sequence": "Wire Sequence colored (Timwi)"
 }
 
 function transcodeProfile(profile, altManuals) {
