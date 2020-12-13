@@ -69,6 +69,8 @@ let stingAltManuals = {
 	"Resistors": "Resistors condensed (Nanthelas)",
 	"Rubik's Cube": "Rubik's Cube lookup table (Katarina)",
 	"Safety Safe": "Safety Safe condensed (samfundev & Stinggyray)",
+	"Simon Screams": "Simon Screams condensed fixed (samfundev)",
+	"Simon States": "Simon States condensed (Nanthelas)",
 	"The Bulb": "The Bulb lookup table (Elias)",
 	"The Festive Jukebox": "The Festive Jukebox optimized (Timwi)",
 	"The Gamepad": "The Gamepad lookup table (Timwi)",
