@@ -93,6 +93,7 @@ let yoshiAltManuals = {
 	"LED Encryption": "LED Encryption lookup table (JakkOfKlubs)",
 	"Logic": "Logic optimized (LeGeND)",
 	"Neutralization": "Neutralization condensed (samfundev)",
+	"Number Pad": "Number Pad lookup table (CaitSith2)",
 	"Piano Keys": "Piano Keys condensed (LeGeND)",
 	"Plumbing": "Plumbing condensed (Timwi)",
 	"Square Button": "Square Button optimized (Timwi)",
