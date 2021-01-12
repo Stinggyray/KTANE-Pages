@@ -40,7 +40,23 @@ let phrases = [
 	".. / .... .- - . / -- --- .-. ... . / -.-. --- -.. .",
 	"Third Base is not the module I was expecting from that name.",
 	"L' R' R R R' L B' F' B F is your moves for Rubik's Cube... wait.",
-	"You've seen Blind Alley, you've seen Deaf Alley, but have you seen Sensory Deprivation Alley?"
+	"You've seen Blind Alley, you've seen Deaf Alley, but have you seen Sensory Deprivation Alley?",
+	"They're similar but different, mandarins and oranges",
+	"Did Flaw build this bomb? It's just a box with extra steps...",
+	"I'm too lazy to do this module. It takes more than two clicks...",
+	"Okay, why is this module asking me to derive the 2nd Fundamental Law of Calculus?",
+	"It's called the Centurion because it takes a century to find enough people to do it.",
+	"Cause of Explosion: Your dumb ass",
+	"I am stupid. The display actually is \"Blank\"",
+	"THIS MODULE HAS BEEN SPONSORED BY RAID SHADOW LEGENDS",
+	"How Can Mirrors Be Real If Our Eyes Aren't Real",
+	"Wait, I need to click <i>how</i> many times per second?",
+	"If this bomb explodes, you're following the wrong political leader.",
+	"Moves like Jagger? Not with that motion sense of yours.",
+	"No success? I guess your zodiac was under the wrong planet's influence.",
+	"Simon screams at your incompetence.",
+	"They say Monopoly ruins friendships. They have not tried KTANE.",
+	"holy shit you are bad at directions"
 ]
 
 let profiles = require('./profiles.js');
