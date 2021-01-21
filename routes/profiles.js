@@ -3,6 +3,7 @@ let yoshi = require('../json/profiles/Yoshi.json')
 let emma = require('../json/profiles/Emma.json')
 let ps = require('../json/profiles/PS.json')
 let vanillas = require('../json/profiles/Vanilla.json')
+let flaw = require('../json/profiles/Flaw.json')
 
 let modules = require('../json/modules.json')
 
@@ -10,7 +11,8 @@ let altIcons = {
 	"Passwords Translated": "Password",
 	"Big Button Translated": "The Button",
 	"Who's on First Translated": "Who's on First",
-	"Morse Code Translated": "Morse Code"
+	"Morse Code Translated": "Morse Code",
+	"Venting Gas Translated": "Venting Gas"
 }
 let altNames = {
 	"Big Button Translated": "The Button Translated"
@@ -112,6 +114,9 @@ let emmaAltManuals = {
 let psAltManuals = {
 
 }
+let flawAltManuals = {
+	"Turn The Keys": "Turn The Keys optimized (Timwi)"
+}
 
 let vanillasAltManuals = {
 	'Complicated Wires': 'Complicated Wires optimized (Stinggyray)',
@@ -150,6 +155,7 @@ yoshi = transcodeProfile(yoshi, yoshiAltManuals);
 emma = transcodeProfile(emma, emmaAltManuals);
 ps = transcodeProfile(ps, psAltManuals);
 vanillas = transcodeProfile(vanillas, vanillasAltManuals);
+flaw = transcodeProfile(flaw, flawAltManuals);
 
 module.exports = (name) => {
 	switch(name) {
@@ -158,5 +164,6 @@ module.exports = (name) => {
 		case "emma": return emma;
 		case "ps": return ps;
 		case "vanillas": return vanillas;
+		case "flaw": return flaw;
 	}
 }

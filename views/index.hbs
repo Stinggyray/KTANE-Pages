@@ -208,6 +208,16 @@
 							<a href="/{{this.manualLink}}.html">{{this.moduleName}}</a></div></div></li>
 						{{/each}}
 				{{/with}}`
+			} else if (name === 'flaw') {
+				document.getElementById("manual-list").innerHTML = `{{#with modules}}
+					{{#each flaw}}
+						<li>
+						<div class="module-cell">
+							<div class="module-icon">
+								<img src="icons/{{this.iconName}}.png"></div><div class="manual-link">
+							<a href="/{{this.manualLink}}.html">{{this.moduleName}}</a></div></div></li>
+						{{/each}}
+				{{/with}}`
 			} else if (name === 'vanillas') {
 				document.getElementById("manual-list").innerHTML = `{{#with modules}}
 					{{#each vanillas}}
@@ -283,6 +293,8 @@
 					<button id="emma" onclick="setActivePerson('emma')">Emma</button>
 					<div class="divider"></div>
 					<button id="ps" onclick="setActivePerson('ps')">PS</button>
+					<div class="divider"></div>
+					<button id="flaw" onclick="setActivePerson('flaw')">Flaw</button>
 					<div class="divider"></div>
 					<button id="vanillas" onclick="setActivePerson('vanillas')">Vanillas</button>
 				</div>
