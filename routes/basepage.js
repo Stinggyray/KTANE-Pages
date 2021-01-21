@@ -56,7 +56,8 @@ let phrases = [
 	"No success? I guess your zodiac was under the wrong planet's influence.",
 	"Simon screams at your incompetence.",
 	"They say Monopoly ruins friendships. They have not tried KTANE.",
-	"holy shit you are bad at directions"
+	"holy shit you are bad at directions",
+	"Wait, this doesn't always flicker??????"
 ]
 
 let profiles = require('./profiles.js');
