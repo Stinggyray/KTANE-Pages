@@ -38,7 +38,7 @@ let universalAltManuals = {
 	"Fast Math": "Fast Math condensed (Stinggyray)",
 	"Flags": "Flags colored (JakkOfKlubs)",
 	"Foreign Exchange Rates": "Foreign Exchange Rates optimized (Timwi)",
-	"Friendship": "Friendship rearranged (samfundev)",
+	"Friendship": "Friendship rearranged (samfundev, Stinggyray)",
 	"Hexamaze": "Hexamaze interactive (samfundev)",
 	"Laundry": "Laundry condensed (Stinggyray)",
 	"Letter Keys": "Letter Keys lookup table (Timwi)",

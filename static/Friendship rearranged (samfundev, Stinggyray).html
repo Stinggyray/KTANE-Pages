@@ -41,96 +41,6 @@
             div.elements { column-count: 2; -moz-column-count: 2; }
         }
     </style>
-    <script>
-        var friendshipSymbols = [
-            "Starstreak", "Coloratura", "Pickpocket", "Lemon Zest", "Night Light", "Bow Hothoof", "Midnight Strike", "Amethyst Star", "Mayor Mare", "Non-pony 6", "Score", "Apple Flora",
-            "Sandbar", "Joe", "Spitfire", "Lily", "Snips", "Suri Polomare", "Shoeshine", "Noteworthy", "Rainbow Swoop", "Lucky Clover", "Cherry Berry", "Meadow Song", "Tootsie Flute",
-            "Sapphire Shores", "Pursey Pink", "Lemon Hearts", "Filthy Rich", "Snails", "Cherry Jubilee", "Cozy Glow", "Count Caesar", "Mr. Carrot Cake", "Cheerilee", "Cadance",
-            "Strawberry Sunrise", "Silverstar", "Lily Lace", "Globe Trotter", "Royal Riff", "Horte Cuisine", "Sealed Scroll", "Granny Smith", "Non-pony 10", "Igneous Rock Pie", "Derpy",
-            "Limestone Pie", "Apple Fritter", "Sunset Shimmer", "Daring Do", "Aria Blaze", "Pinny Lane", "Photo Finish", "Ms. Harshwhinny", "Starlight Glimmer", "Stellar Eclipse", "Fleetfoot",
-            "Mrs. Cup Cake", "Caramel", "Hoops", "Open Skies", "Moon Dancer", "Minty", "Dr. Caballeron", "Non-pony 5", "Non-pony 9", "Featherweight", "Blossomforth", "Sunshower Raindrops",
-            "Spoiled Rich", "Mr. Stripes", "Clear Skies", "Radiant Hope", "Apple Honey", "Sugarcoat", "Shooting Star", "Quibble Pants", "Lyra", "Coco Pommel", "Comet Tail", "Sweetie Belle",
-            "Screwball", "Twist", "Starry Eyes", "Indigo Zap", "Trixie", "White Lightning", "Apple Split", "Cloudy Quartz", "Zephyr Breeze", "Leadwing", "Electric Sky", "Silver Shill",
-            "Fleur Dis Lee", "Dr. Horse", "Cheese Sandwich", "Flash Sentry", "Apple Bumpkin", "Non-pony 3", "Flax Seed", "Hoity Toity", "Rose", "Scootaloo", "Thunderlane", "Red Gala",
-            "Cloud Kicker", "Sour Sweet", "Hayseed Turnip Truck", "Prim Hemline", "Pinkie Pie", "Hondo Flanks", "Twilight Velvet", "Fancy Pants", "Dr. Fauna", "Firecracker Burst",
-            "Tender Taps", "Inky Rose", "Screwy", "Golden Gavel", "Blow Dry", "Auntie Applesauce", "Torch Song", "All Aboard", "Emerald Green", "Non-pony 1", "Pear Butter", "Pixel Pizzaz",
-            "Biff", "Davenport", "Peachy Sweet", "Peachy Pie", "Strike", "Violet Blurr", "Rarity", "Diamond Tiara", "Trouble Shoes", "Hughbert Jellius", "Babs Seed", "Aloe Blossom", "Flam",
-            "Apple Leaves", "Apple Rose", "Lily Blossom", "Plaid Stripes", "Sweetie Drops", "Nurse Redheart", "Non-pony 12", "Sprinkle Medley", "Windy Whistles", "Celestia", "Adagio Dazzle",
-            "Saffron Masala", "Non-pony 7", "Truffle", "Feather Bangs", "Twinkleshine", "Vapor Trail", "Non-pony 2", "Golden Harvest", "Octavia Melody", "Apple Bloom", "Unconditioner",
-            "Sassaflash", "Magnet Bolt", "Rainbow Dash", "Meadow Flower", "Bright Mac", "Ms. Peachbottom", "Holly Dash", "Silver Spoon", "Rockhoof", "Apple Cobbler", "Mane Moon", "Fluttershy",
-            "Apple Strudel", "Diamond Rose", "Luna", "Blue Bobbin", "Fluffy Clouds", "Flitter", "Non-pony 8", "Archer", "Cookie Crumbles", "Lickety Split", "Upper Crust", "Aunt Orange",
-            "Withers", "Rogue", "Royal Pin", "Big McIntosh", "Flim", "Double Diamond", "Bumblesweet", "Jet Set", "Toola Roola", "Apple Cinnamon", "Neon Brush", "Clean Sweep", "Coriander Cumin",
-            "Sea Swirl", "Compass Star", "Cloudchaser", "Comb Over", "Twilight Sparkle", "Banana Fluff", "Applejack", "Wild Fire", "Cherry Fizzy", "Sunny Daze", "Wheat Grass", "Non-pony 13",
-            "Vinyl Scratch", "Maud Pie", "Sunburst", "Prince Blueblood", "Silver Spanner", "Crusoe Palm", "Quick Trim", "Lotus Blossom", "Sunshower", "Orange Swirl", "Daisy", "Sunny Rays",
-            "Dumb-Bell", "Goldengrape", "Soarin", "Zipporwhill", "Toe Tapper", "Night Glider", "Star Swirl", "Beauty Brass", "Marble Pie", "Tree Hugger", "Bulk Biceps", "Uncle Orange",
-            "Lightning Dust", "Non-pony 4", "Time Turner", "Berryshine", "Gladmane", "Timber Spruce", "Coconut Cream", "Rainbowshine", "Sonata Dusk", "Non-pony 14", "Equality", "Braeburn",
-            "Parasol", "Shining Armor", "Trenderhoof"
-        ];
-
-        var elementsOfHarmony = [
-            { Name: 'Serenity', Scale: 1 },           { Name: 'Resilience', Scale: 1 },         { Name: 'Scrupulousness', Scale: 1 },     { Name: 'Adventurousness', Scale: .9 },
-            { Name: 'Selflessness', Scale: 1 },       { Name: 'Companionship', Scale: 1 },      { Name: 'Softheartedness', Scale: .9 },   { Name: 'Esteem', Scale: 1 },
-            { Name: 'Pardoning', Scale: 1 },          { Name: 'Solidarity', Scale: 1 },         { Name: 'Integrity', Scale: 1 },          { Name: 'Self-respect', Scale: 1 },
-            { Name: 'Neutrality', Scale: 1 },         { Name: 'Authenticity', Scale: 1 },       { Name: 'Virtue', Scale: 1 },             { Name: 'Empathy', Scale: 1 },
-            { Name: 'Steadfastness', Scale: 1 },      { Name: 'Perseverance', Scale: 1 },       { Name: 'Thoughtfulness', Scale: 1 },     { Name: 'Courage', Scale: 1 },
-            { Name: 'Yielding', Scale: 1 },           { Name: 'Faithfulness', Scale: 1 },       { Name: 'Laughter', Scale: 1 },           { Name: 'Graciousness', Scale: 1 },
-            { Name: 'Creativity', Scale: 1 },         { Name: 'Affability', Scale: 1 },         { Name: 'Cordiality', Scale: 1 },         { Name: 'Altruism', Scale: 1 },
-            { Name: 'Purposefulness', Scale: 1 },     { Name: 'Regard', Scale: 1 },             { Name: 'Warmheartedness', Scale: .9 },   { Name: 'Tactfulness', Scale: 1 },
-            { Name: 'Hospitality', Scale: 1 },        { Name: 'Gentleness', Scale: 1 },         { Name: 'Sensitivity', Scale: 1 },        { Name: 'Determination', Scale: 1 },
-            { Name: 'Sociability', Scale: 1 },        { Name: 'Good will', Scale: 1 },          { Name: 'Reliability', Scale: 1 },        { Name: 'Bounteousness', Scale: 1 },
-            { Name: 'Beneficence', Scale: 1 },        { Name: 'Dependability', Scale: 1 },      { Name: 'Affinity', Scale: 1 },           { Name: 'Munificence', Scale: 1 },
-            { Name: 'Attentiveness', Scale: 1 },      { Name: 'Fidelity', Scale: 1 },           { Name: 'Honesty', Scale: 1 },            { Name: 'Bravery', Scale: 1 },
-            { Name: 'Resoluteness', Scale: 1 },       { Name: 'Helpfulness', Scale: 1 },        { Name: 'Decorum', Scale: 1 },            { Name: 'Decency', Scale: 1 },
-            { Name: 'Open-mindedness', Scale: .9 },   { Name: 'Good faith', Scale: 1 },         { Name: 'Dauntlessness', Scale: 1 },      { Name: 'Impartiality', Scale: 1 },
-            { Name: 'Benignity', Scale: 1 },          { Name: 'Courteousness', Scale: 1 },      { Name: 'Uprightness', Scale: 1 },        { Name: 'Merriment', Scale: 1 },
-            { Name: 'Daring', Scale: 1 },             { Name: 'Tenderheartedness', Scale: .8 }, { Name: 'Morality', Scale: 1 },           { Name: 'Unity', Scale: 1 },
-            { Name: 'Intrepidity', Scale: 1 },        { Name: 'Condolence', Scale: 1 },         { Name: 'Liberality', Scale: 1 },         { Name: 'Goodness', Scale: 1 },
-            { Name: 'Compassion', Scale: 1 },         { Name: 'Openhandedness', Scale: .95 },   { Name: 'Affection', Scale: 1 },          { Name: 'Comradery', Scale: 1 },
-            { Name: 'Philanthropy', Scale: 1 },       { Name: 'Gallantry', Scale: 1 },          { Name: 'Concord', Scale: 1 },            { Name: 'Calmness', Scale: 1 },
-            { Name: 'Fair-mindedness', Scale: .9 },   { Name: 'Mildness', Scale: 1 },           { Name: 'Consideration', Scale: 1 },      { Name: 'Candor', Scale: 1 },
-            { Name: 'Humility', Scale: 1 },           { Name: 'Mercy', Scale: 1 },              { Name: 'Evenhandedness', Scale: .95 },   { Name: 'Hilarity', Scale: 1 },
-            { Name: 'Sincerity', Scale: 1 },          { Name: 'Wholeheartedness', Scale: .85 }, { Name: 'Equity', Scale: 1 },             { Name: 'Justice', Scale: 1 },
-            { Name: 'Wholesomeness', Scale: 1 },      { Name: 'Benevolence', Scale: 1 },        { Name: 'Clemency', Scale: 1 },           { Name: 'Generosity', Scale: 1 },
-            { Name: 'Patience', Scale: 1 },           { Name: 'Magnanimity', Scale: 1 },        { Name: 'Forgiving', Scale: 1 },          { Name: 'Imperturbability', Scale: .9 },
-            { Name: 'Sympathy', Scale: 1 },           { Name: 'Charitableness', Scale: 1 },     { Name: 'Kindness', Scale: 1 },           { Name: 'Truthfulness', Scale: 1 },
-            { Name: 'Heedfulness', Scale: 1 },        { Name: 'Genuineness', Scale: 1 },        { Name: 'Adaptability', Scale: 1 },       { Name: 'Caring', Scale: 1 },
-            { Name: 'Flexibility', Scale: 1 },        { Name: 'Understanding', Scale: 1 },      { Name: 'Humanitarianism', Scale: .9 },   { Name: 'Mindfulness', Scale: 1 },
-            { Name: 'Lenity', Scale: 1 },             { Name: 'Comradeship', Scale: 1 },        { Name: 'Venturesomeness', Scale: .9 },   { Name: 'Fairness', Scale: 1 },
-            { Name: 'Equanimity', Scale: 1 },         { Name: 'Candidness', Scale: 1 },         { Name: 'Earnestness', Scale: 1 },        { Name: 'Amicability', Scale: 1 },
-            { Name: 'Endurance', Scale: 1 },          { Name: 'Support', Scale: 1 },            { Name: 'Comity', Scale: 1 },             { Name: 'Tolerance', Scale: 1 },
-            { Name: 'Loyalty', Scale: 1 },            { Name: 'Trustworthiness', Scale: .9 },   { Name: 'Amusement', Scale: 1 },          { Name: 'Encouragement', Scale: 1 },
-            { Name: 'Responsibility', Scale: 1 },     { Name: 'Conscientiousness', Scale: .8 }, { Name: 'Inspiration', Scale: 1 },        { Name: 'Straightforwardness', Scale: .75 },
-            { Name: 'Kindheartedness', Scale: .9 },   { Name: 'Devotion', Scale: 1 },           { Name: 'Friendliness', Scale: 1 }
-        ];
-
-        function setRules(rnd)
-        {
-            // Add extra randomess
-            for (var i = rnd.next(0, 10); i > 0; i--)
-                rnd.nextDouble();
-
-            var symbols = rnd.shuffleFisherYates(friendshipSymbols.slice(0));
-            for (var i = 0; i < 56; i++) {
-                var sym = document.getElementById(`fs-${i}`);
-                sym.src = `img/Friendship/${symbols[i]}.png`;
-                sym.title = symbols[i];
-            }
-
-            var eoHs = rnd.shuffleFisherYates(elementsOfHarmony.slice(0));
-            for (var i = 0; i < 28; i++) {
-                var eoH = document.getElementById(`eoh-${i+1}`);
-                eoH.innerText = eoHs[i].Name;
-                eoH.style.transform = `scaleX(${eoHs[i].Scale})`;
-            }
-
-            var leftOrRight = rnd.next(0, 2);
-            document.getElementById('rule-lr').innerText = leftOrRight ? 'leftmost' : 'rightmost';
-            var topOrBottom = rnd.next(0, 2);
-            document.getElementById('rule-tb').innerText = topOrBottom ? 'topmost' : 'bottommost';
-        }
-
-        function setDefaultRules(rnd) { setRules(rnd); }
-    </script>
 </head>
 
 <body>
@@ -148,13 +58,16 @@
 
                 <ul>
                     <li>Locate the friendship symbols on the display in the table.</li>
-                    <li>Starting at the <span class='rule' id='rule-lr'>leftmost</span> symbol on the display, that doesn't align vertically with other symbols, disregard the first one that appears in a <u>column</u>.</li>
-                    <li>Do the same with the <span class='rule' id='rule-tb'>topmost</span> symbol and disregard the first one in a <u>row</u>.</li>
                     <li>Select one of the Elements of Harmony located at the intersections of the remaining rows and columns.</li>
                 </ul>
 
                 <table class='friendship'>
                     <tr>
+                        <th style="border: none;"></th>
+                        <th style="border: none;"></th>
+                        <th colspan="14">Disregard Leftmost (Ctrl+Click)</th></tr>
+                    <tr>
+                        <th style="border: none;"></th>
                         <th style="border: none;"></th>
                         <th><img class='fs' id='fs-0' src='img/Friendship/Amethyst Star.png'><br><img class='fs' id='fs-41' src='img/Friendship/Starlight Glimmer.png'></th>
                         <th><img class='fs' id='fs-1' src='img/Friendship/Apple Cinnamon.png'><br><img class='fs' id='fs-40' src='img/Friendship/Spoiled Rich.png'></th>
@@ -171,6 +84,7 @@
                         <th><img class='fs' id='fs-12' src='img/Friendship/Cherry Jubilee.png'><br><img class='fs' id='fs-29' src='img/Friendship/Moon Dancer.png'></th>
                         <th><img class='fs' id='fs-13' src='img/Friendship/Coco Pommel.png'><br><img class='fs' id='fs-28' src='img/Friendship/Mayor Mare.png'></th>
                     </tr>
+                    <tr><th rowspan="15" style="w: 8mm;"><p style="writing-mode: vertical-rl; transform: rotate(180deg); margin: 0;">Disregard Topmost (Shift+Click)</p></bdo></th></tr>
                     <tr><th><img class='fs' id='fs-55' src='img/Friendship/Vinyl Scratch.png'><img class='fs' id='fs-14' src='img/Friendship/Coloratura.png'></th><td>J<td>G<td>U<td>K<td>V<td>8<td>L<td>C<td>H<td>4<td>W<td>P<td>M<td>R</tr>
                     <tr><th><img class='fs' id='fs-54' src='img/Friendship/Twist.png'><img class='fs' id='fs-15' src='img/Friendship/Daisy.png'></th><td>7<td>S<td>8<td>U<td>N<td>J<td>9<td>Y<td>F<td>P<td>Q<td>C<td>R<td>4</tr>
                     <tr><th><img class='fs' id='fs-53' src='img/Friendship/Twilight Velvet.png'><img class='fs' id='fs-16' src='img/Friendship/Daring Do.png'></th><td>Q<td>R<td>H<td>4<td>F<td>7<td>J<td>E<td>8<td>T<td>N<td>9<td>A<td>X</tr>
