@@ -131,7 +131,9 @@
     "ColoredSwitchesModule",
     "calcModule",
     "HumanResourcesModule",
-    "SouvenirModule"
+    "SouvenirModule",
+    "FlavorText",
+    "FlavorTextCruel"
   ],
   "EnabledList": [
     "AdjacentLettersModule",

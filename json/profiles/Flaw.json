@@ -154,7 +154,9 @@
     "iceCreamModule",
     "calcModule",
     "HumanResourcesModule",
-    "Needy Math"
+    "Needy Math",
+    "FlavorText",
+    "FlavorTextCruel"
   ],
   "EnabledList": [
     "BattleshipModule",

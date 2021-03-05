@@ -137,7 +137,9 @@
     "NeedyVentV2",
     "wastemanagement",
     "calcModule",
-    "HumanResourcesModule"
+    "HumanResourcesModule",
+    "FlavorText",
+    "FlavorTextCruel"
   ],
   "EnabledList": [
     "jukebox",

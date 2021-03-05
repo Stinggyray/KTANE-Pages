@@ -19,7 +19,6 @@
     "mashematics",
     "radiator",
     "europeanTravel",
-    "graffitiNumbers",
     "plungerButton",
     "timezone",
     "troll",
@@ -51,7 +50,6 @@
     "SeaShells",
     "MusicRhythms",
     "CruelPianoKeys",
-    "FestivePianoKeys",
     "PianoKeys",
     "PointOfOrderModule",
     "OnlyConnectModule",
@@ -90,9 +88,9 @@
     "kookyKeypadModule",
     "ExtendedPassword",
     "MarbleTumbleModule",
-    "MorseAMaze",
     "Color Generator",
-    "iceCreamModule"
+    "iceCreamModule",
+    "FlavorTextCruel"
   ],
   "EnabledList": [
     "AdjacentLettersModule",
@@ -166,7 +164,11 @@
     "RubiksCubeModule",
     "spwizPerspectivePegs",
     "TheGamepadModule",
-    "TheClockModule"
+    "TheClockModule",
+    "FestivePianoKeys",
+    "MorseAMaze",
+    "FlavorText",
+    "graffitiNumbers"
   ],
   "Operation": 0
 }

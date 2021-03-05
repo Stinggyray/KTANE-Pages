@@ -1,11 +1,14 @@
-let sting = require('../json/profiles/Sting.json')
-let yoshi = require('../json/profiles/Yoshi.json')
-let emma = require('../json/profiles/Emma.json')
-let ps = require('../json/profiles/PS.json')
-let vanillas = require('../json/profiles/Vanilla.json')
-let flaw = require('../json/profiles/Flaw.json')
+let sting = require('../json/profiles/Sting.json');
+let yoshi = require('../json/profiles/Yoshi.json');
+let emma = require('../json/profiles/Emma.json');
+let ps = require('../json/profiles/PS.json');
+let vanillas = require('../json/profiles/Vanilla.json');
+let flaw = require('../json/profiles/Flaw.json');
 
-let modules = require('../json/modules.json')
+let modules = require('../json/modules.json');
+
+let fs = require('fs');
+let path = require('path');
 
 let altIcons = {
 	"Passwords Translated": "Password",
@@ -54,6 +57,7 @@ let universalAltManuals = {
 	"Rock-Paper-Scissors-Lizard-Spock": "Rock-Paper-Scissors-Lizard-Spock embellished (Rexkix)",
 	"Switches": "Switches optimized (Nanthelas)",
 	"Third Base": "Third Base alphabetized (Timwi)",
+	"Venting Gas Translated": "Venting Gas all languages condensed (S.)",
 	"Who's on First Translated": "Who's on First all languages condensed (S.)",
 	"Wire Placement": "Wire Placement embellished (Timwi)"
 }
@@ -94,19 +98,22 @@ let yoshiAltManuals = {
 	"Adventure Game": "Adventure Game condensed (samfundev)",
 	"Astrology": "Astrology lookup table (Elias & samfundev)",
 	"Chess": "Chess optimized (Timwi)",
+	"Color Generator": "Color Generator lookup table (Timwi)",
+	"Complicated Buttons": "Complicated Buttons optimized (Timwi)",
 	"Connection Check": "Connection Check optimized (Elias)",
 	"Follow the Leader": "Follow the Leader condensed (Nanthelas)",
 	"LED Encryption": "LED Encryption lookup table (JakkOfKlubs)",
 	"Logic": "Logic optimized (LeGeND)",
 	"Neutralization": "Neutralization condensed (samfundev)",
 	"Number Pad": "Number Pad lookup table (CaitSith2)",
+	"Perplexing Wires": "Perplexing Wires lookup table (ZekNikZ)",
 	"Piano Keys": "Piano Keys condensed (LeGeND)",
 	"Plumbing": "Plumbing condensed (Timwi)",
 	"Square Button": "Square Button optimized (Timwi)",
 	"The Festive Jukebox": "The Festive Jukebox optimized (Timwi)",
 	"The Jukebox": "The Jukebox optimized (Timwi)",
-	"Tic Tac Toe": " Tac Toe optimized (samfundev)\",\n" +
-		"\t\"Two Bits\": \"Two BitTics optimized (Nanthelas)"
+	"Tic Tac Toe": "Tic Tac Toe optimized (samfundev)",
+	"Two Bits": "Two Bits optimized (Nanthelas)"
 }
 let emmaAltManuals = {
 
@@ -115,7 +122,8 @@ let psAltManuals = {
 
 }
 let flawAltManuals = {
-	"Turn The Keys": "Turn The Keys optimized (Timwi)"
+	"Turn The Keys": "Turn The Keys optimized (Timwi)",
+	"English Test": "English Test optimized (Timwi)"
 }
 
 let vanillasAltManuals = {
@@ -140,11 +148,14 @@ function transcodeProfile(profile, altManuals) {
 	let newConstructedList = [];
 
 	enabledList.forEach((entry) => {
-		newConstructedList.push({
+		let newEntry = {
 			moduleName: altNames[entry] ?? entry,
 			manualLink: altManuals[entry] ?? universalAltManuals[entry] ?? entry,
-			iconName: altIcons[entry] ?? entry
-		})
+			iconName: altIcons[entry] ?? entry,
+
+		};
+		newEntry.pageExists = fs.existsSync(path.join(__dirname, '../static/' + newEntry.manualLink + ".html"))
+		newConstructedList.push(newEntry);
 	});
 
 	return newConstructedList;
