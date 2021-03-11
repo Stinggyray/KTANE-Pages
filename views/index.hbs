@@ -33,7 +33,7 @@
 			document.getElementById(view).classList.add("bg-green-400");
 			document.getElementById(view).classList.add("text-black");
 
-			if(lastView) {
+			if(lastView && lastView !== view) {
 				document.getElementById(lastView).classList.remove("bg-green-400");
 				document.getElementById(lastView).classList.remove("text-black");
 			}
@@ -59,7 +59,7 @@
 			document.getElementById(mode).classList.add("bg-green-400");
 			document.getElementById(mode).classList.add("text-black");
 
-			if(lastMode) {
+			if(lastMode && lastMode !== mode) {
 				document.getElementById(lastMode).classList.remove("bg-green-400");
 				document.getElementById(lastMode).classList.remove("text-black");
 			}
