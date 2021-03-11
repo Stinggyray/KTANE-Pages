@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: Trebuchet MS, sans-serif;
+}
+
+.profile-list {
+	@apply w-5/6;
+	@apply mx-auto;
+}
+
+.profile-list li > div {
+	@apply flex;
+	@apply content-center;
+	@apply items-center;
+}
+
+.orderly {
+	@apply grid;
+	@apply grid-cols-3;
+}
+
+.orderly li > div {
+	@apply mb-1;
+}
+
+.compact li {
+	@apply inline-block;
+	@apply border-gray-400;
+	border-width: 1px;
+}
+
+.compact li > div {
+	@apply mx-1;
+	@apply w-auto;
+}

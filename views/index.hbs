@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+	<title>Bootleg Repository of Manual Pages</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -11,306 +12,152 @@
 	<meta property="og:url" content="http://ktane.stinggy.com">
 	<meta property="og:site_name" content="Sting's Personal Stuff">
 
-	<link rel="stylesheet" href="/css/normalize.css">
+	<link rel="stylesheet" href="/css/{{ loadcss }}">
 
 	<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 
-	<style>
-		body {
-			max-width: 66em;
-			font-family: 'Trebuchet MS', sans-serif;
-			margin: 0 auto;
-			font-size: 13pt;
-			display: block;
-
-			background-color: rgb(50, 50, 50);
-			color: rgb(150, 150, 150);
-		}
-
-		#logo {
-			flex: 1;
-		}
-		#logo img {
-			max-width: 33em;
-		}
-		#title-card {
-			display: flex;
-			flex-direction: column;
-			flex: 1;
-		}
-
-		#flavor-text {
-			height: 40%;
-		}
-		#menu {
-			flex-grow: 1;
-			font-size: 18px;
-		}
-
-		.page-top {
-			padding-top: 1em;
-			display: flex;
-			flex-direction: row;
-
-			max-width: 66em;
-		}
-		.page-bottom {
-			width: 100%;
-		}
-		.page-content {
-			min-height: 100vh;
-			padding: 0 .7em 0;
-		}
-		.active-user {
-			background-color: #4CAF50 !important;
-		}
-		#menu-container button {
-			border: none;
-			text-align: center;
-			text-decoration: none;
-			font-size: 24px;
-			display: inline-block;
-			font-family: 'Trebuchet MS', sans-serif;
-			padding-top: 7px;
-			padding-bottom: 7px;
-			flex: 1;
-			background-color: #ffffff;
-			outline: none;
-		}
-		#views button {
-			border: none;
-			text-align: center;
-			text-decoration: none;
-			font-size: 18px;
-			display: inline-block;
-			font-family: 'Trebuchet MS', sans-serif;
-			padding-top: 7px;
-			padding-bottom: 7px;
-			flex: 1;
-			background-color: #ffffff;
-			outline: none;
-		}
-		#menu p {
-			padding: 0;
-			margin: 0;
-		}
-		#views {
-			display: flex;
-			width: 100%;
-		}
-		#menu-container button:hover {
-			background-color: #bbbbbb;
-		}
-		#menu-container {
-			display: flex;
-			width: 100%;
-			background-color: #ffffff;
-		}
-		#menu-container .divider {
-			margin-top: 5px;
-			margin-bottom: 5px;
-			border-left: 1px solid #cccccc;
-		}
-		#manual-list {
-			margin: 0;
-			padding-bottom: 10em;
-		}
-		#manual-list ul {
-			padding: 0;
-			margin: 0;
-			height: 40px;
-			display: inline-block;
-			column-count: 3;
-		}
-		#manual-list li {
-			list-style-type: none;
-			padding: 0;
-			margin: 0;
-			display: grid;
-			columns: 3;
-			float: left;
-			width: 33%;
-		}
-		.manual-link {
-			height: 100%;
-			justify-content: center;
-			align-items: center;
-			margin-left: 10px;
-			margin-right: 5px;
-			display: flex;
-		}
-		a {
-			color: rgb(150, 150, 150);
-		}
-		.module-cell {
-			height: 40px;
-			display: flex;
-			align-content: center;
-		}
-		.module-icon {
-			margin-top: 4px;
-			margin-bottom: 4px;
-			margin-left: 5px;
-			display: inline-block;
-		}
-		.footer {
-			font-size: 12px;
-			text-align: center;
-			width: 100%;
-
-		}
-	</style>
 	<script>
 		let lastName = undefined;
-		function setActivePerson(name) {
-			if(lastName !== undefined) {
-				document.getElementById(lastName).classList.remove('active-user');
+		function setActiveUser(name) {
+			if(lastName) {
+				document.getElementById(lastName).classList.add("hidden");
 			}
-			document.getElementById(name).classList.add('active-user');
+			document.getElementById(name).classList.remove("hidden");
 			lastName = name;
-			if(name === 'sting') {
-				document.getElementById("manual-list").innerHTML = `{{#with modules}}
-						{{#each sting}}
-						<li>
-						<div class="module-cell">
-							<div class="module-icon">
-								<img src="icons/{{this.iconName}}.png"></div><div class="manual-link">
-							<a href="/{{this.manualLink}}.html" {{#if pageExists}}{{else}}style="color: #ff0000;"{{/if}}>{{this.moduleName}}</a></div></div></li>
-						{{/each}}
-					{{/with}}`
-			} else if (name === 'yoshi') {
-				document.getElementById("manual-list").innerHTML = `{{#with modules}}
-					{{#each yoshi}}
-						<li>
-						<div class="module-cell">
-							<div class="module-icon">
-								<img src="icons/{{this.iconName}}.png"></div><div class="manual-link">
-							<a href="/{{this.manualLink}}.html" {{#if pageExists}}{{else}}style="color: #ff0000;"{{/if}}>{{this.moduleName}}</a></div></div></li>
-						{{/each}}
-				{{/with}}`
-			} else if (name === 'emma') {
-				document.getElementById("manual-list").innerHTML = `{{#with modules}}
-					{{#each emma}}
-						<li>
-						<div class="module-cell">
-							<div class="module-icon">
-								<img src="icons/{{this.iconName}}.png"></div><div class="manual-link">
-							<a href="/{{this.manualLink}}.html" {{#if pageExists}}{{else}}style="color: #ff0000;"{{/if}}>{{this.moduleName}}</a></div></div></li>
-						{{/each}}
-				{{/with}}`
-			} else if (name === 'ps') {
-				document.getElementById("manual-list").innerHTML = `{{#with modules}}
-					{{#each ps}}
-						<li>
-						<div class="module-cell">
-							<div class="module-icon">
-								<img src="icons/{{this.iconName}}.png"></div><div class="manual-link">
-							<a href="/{{this.manualLink}}.html" {{#if pageExists}}{{else}}style="color: #ff0000;"{{/if}}>{{this.moduleName}}</a></div></div></li>
-						{{/each}}
-				{{/with}}`
-			} else if (name === 'flaw') {
-				document.getElementById("manual-list").innerHTML = `{{#with modules}}
-					{{#each flaw}}
-						<li>
-						<div class="module-cell">
-							<div class="module-icon">
-								<img src="icons/{{this.iconName}}.png"></div><div class="manual-link">
-							<a href="/{{this.manualLink}}.html" {{#if pageExists}}{{else}}style="color: #ff0000;"{{/if}}>{{this.moduleName}}</a></div></div></li>
-						{{/each}}
-				{{/with}}`
-			} else if (name === 'vanillas') {
-				document.getElementById("manual-list").innerHTML = `{{#with modules}}
-					{{#each vanillas}}
-						<li>
-						<div class="module-cell">
-							<div class="module-icon">
-								<img src="icons/{{this.iconName}}.png"></div><div class="manual-link">
-							<a href="/{{this.manualLink}}.html" {{#if pageExists}}{{else}}style="color: #ff0000;"{{/if}}>{{this.moduleName}}</a></div></div></li>
-						{{/each}}
-				{{/with}}`
-			}
+			Cookies.set('name', name);
+		}
+
+		let lastView = undefined;
+
+		function setView(view) {
+			document.getElementById(view).classList.add("bg-green-400");
+			document.getElementById(view).classList.add("text-black");
 
 			if(lastView) {
-				setView(lastView);
+				document.getElementById(lastView).classList.remove("bg-green-400");
+				document.getElementById(lastView).classList.remove("text-black");
+			}
+			let elements = document.getElementsByClassName("profile-list");
+
+			for(let i = 0; i < elements.length; i++) {
+				if(view === 'orderly') {
+					elements[i].classList.remove('compact');
+					elements[i].classList.add('orderly');
+				}
+				if(view === 'compact') {
+					elements[i].classList.remove('orderly');
+					elements[i].classList.add('compact');
+				}
 			}
 
-			Cookies.set('name', name);
+			lastView = view;
+			Cookies.set('view', view);
+		}
+
+		let lastMode = undefined;
+		function setManualPages(mode) {
+			document.getElementById(mode).classList.add("bg-green-400");
+			document.getElementById(mode).classList.add("text-black");
+
+			if(lastMode) {
+				document.getElementById(lastMode).classList.remove("bg-green-400");
+				document.getElementById(lastMode).classList.remove("text-black");
+			}
+			let elements = document.getElementsByClassName("page-link");
+
+			for(let i = 0; i < elements.length; i++) {
+				if(mode === 'optimized') {
+					elements[i].setAttribute("href", "/" + elements[i].getAttribute("data-optimized") + ".html")
+				}
+				if(mode === 'original') {
+					elements[i].setAttribute("href", "/" + elements[i].getAttribute("data-original") + ".html")
+				}
+			}
+
+			lastMode = mode;
+			Cookies.set('mode', mode);
 		}
 
 		function loadCookie() {
 			if(Cookies.get('name')) {
-				setActivePerson(Cookies.get('name'));
+				setActiveUser(Cookies.get('name'));
 			}
-			let view = Cookies.get('view');
-			if(view) {
-				console.log(view);
+			if(Cookies.get('view')) {
 				setView(Cookies.get('view'));
 			}
-		}
-
-		let lastView = undefined;
-		function setView(view) {
-			if(lastView !== undefined) {
-				document.getElementById(lastView).classList.remove('active-user');
+			if(Cookies.get('mode')) {
+				setManualPages(Cookies.get('mode'));
 			}
-			document.getElementById(view).classList.add('active-user');
-			lastView = view;
-			if(view === 'compact') {
-				let listItems = document.getElementById('manual-list').getElementsByTagName('li');
-				for(let i = 0; i < listItems.length; i++){
-					listItems[i].style.width = 'auto';
-					listItems[i].style.border = '1px solid rgb(150, 150, 150)';
-				}
-			} else if (view === 'orderly') {
-				let listItems = document.getElementById('manual-list').getElementsByTagName('li');
-				for(let i = 0; i < listItems.length; i++){
-					listItems[i].style.width = '33%';
-					listItems[i].style.border = 'none';
-				}
-			}
-			Cookies.set('view', view);
 		}
 	</script>
-	<title>Bootleg Repository of Manual Pages</title>
 </head>
 
-<body onload="loadCookie()">
-	<div class="page-content">
-	<div class="page-top">
-		<div id="logo">
-			<img src="img/logo.png" alt="Bootleg Repository of Manual Pages">
-		</div>
-		<div id="title-card">
-			<div id="flavor-text">
-				<p><i>{{{phrase}}}</i></p>
-			</div>
-			<div id="menu">
-				<div id="menu-container">
-					<button id="sting" onclick="setActivePerson('sting')">Sting</button>
-					<div class="divider"></div>
-					<button id="yoshi" onclick="setActivePerson('yoshi')">Yoshi</button>
-					<div class="divider"></div>
-					<button id="emma" onclick="setActivePerson('emma')">Emma</button>
-					<div class="divider"></div>
-					<button id="ps" onclick="setActivePerson('ps')">PS</button>
-					<div class="divider"></div>
-					<button id="flaw" onclick="setActivePerson('flaw')">Flaw</button>
-					<div class="divider"></div>
-					<button id="vanillas" onclick="setActivePerson('vanillas')">Vanillas</button>
-				</div>
-				<br>
-				<p style="text-align: center;">View</p>
-				<div id="views">
-					<button id="orderly" onclick="setView('orderly')">Orderly</button>
-					<button id="compact" onclick="setView('compact')">Compact</button>
-				</div>
+<body class="bg-gray-800" onload="loadCookie()">
+	<div class="w-11/12 flex mx-auto my-5 rounded-lg bg-gray-700 pl-5 py-5">
+		<div class="flex-col flex-none">
+			<img src="/img/logo.png" alt="Bootleg Repository of Manual Pages" class="h-40 mb-4">
+			<div class="flex h-20">
+				<p class="text-white self-end overflow-wrap w-80 flex-grow leading-snug">{{{phrase}}}</p>
 			</div>
 		</div>
+		<div class="border-2 border-gray-800 mx-5"></div>
+		<div class="flex flex-col w-full h-60 mr-2">
+			<div class="flex flex-row w-full flex-none">
+				{{#each modules}}
+					<button onclick="setActiveUser('{{name}}');" class="hover:shadow-lg block px-3 w-30 text-black flex-1 py-1.5 font-bold mr-3 text-center rounded-md bg-gradient-to-r {{gradient}}">
+						{{name}}
+					</button>
+				{{/each}}
+			</div>
+			<div class="flex flex-grow"></div>
+			<div class="flex flex-row text-gray-400 flex-none">
+				<div class="flex flex-col flex-1">
+					<h2 class="font-bold">
+						View Mode
+					</h2>
+					<button onclick="setView('orderly');" id="orderly" class="mt-2 py-1.5 bg-gray-800 rounded-md w-2/3">
+						Orderly
+					</button>
+					<button onclick="setView('compact');" id="compact" class="mt-2 py-2 bg-gray-800 rounded-md w-2/3">
+						Compact
+					</button>
+				</div>
+				<div class="flex-col flex-1">
+					<h2 class="font-bold">
+						Manual Pages
+					</h2>
+					<button onclick="setManualPages('optimized');" id="optimized" class="mt-2 py-1.5 bg-gray-800 rounded-md w-2/3">
+						Optimized
+					</button>
+					<button onclick="setManualPages('original');" id="original" class="mt-2 py-2 bg-gray-800 rounded-md w-2/3">
+						Original
+					</button>
+				</div>
+				<div class="flex-col flex-1">
+
+				</div>
+			</div>
+		</div>
 	</div>
-	<div class="page-bottom">
-		<ul id="manual-list">
-			<h3>Select a person or profile.</h3>
-		</ul>
-	</div>
-	</div>
+
+	{{#each modules}}
+		<div class="hidden" id="{{name}}">
+			<div class="w-11/12 mx-auto mx-5 my-2 rounded-lg bg-gradient-to-r px-5 py-2 {{gradient}} mt-5">
+				<h1 class="text-2xl font-semibold">{{name}}</h1>
+			</div>
+			<div class="w-11/12 mt-3 mx-auto rounded-lg bg-gray-700 p-5">
+				<ul class="profile-list compact">
+					{{#each profiles}}
+						<li>
+							<div class="flex content-center items-center">
+								<img class="icon mr-2" src="icons/{{this.iconName}}.png">
+								<a href="/{{this.manualLink}}.html" data-optimized="{{this.manualLink}}" data-original="{{this.originalManualLink}}" class="page-link font-medium {{#if pageExists}}text-gray-300{{else}}text-red-500{{/if}}">{{this.moduleName}}</a>
+							</div>
+						</li>
+					{{/each}}
+				</ul>
+			</div>
+		</div>
+	{{/each}}
 </body>
+</html>

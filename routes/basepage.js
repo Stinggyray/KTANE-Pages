@@ -62,14 +62,38 @@ let phrases = [
 
 let profiles = require('./profiles.js');
 
-let moduleList = {
-	sting: profiles('sting'),
-	yoshi: profiles('yoshi'),
-	emma: profiles('emma'),
-	ps: profiles('ps'),
-	vanillas: profiles('vanillas'),
-	flaw: profiles('flaw')
-}
+let moduleList = [
+	{
+		name: "Sting",
+		profiles: profiles('sting'),
+		gradient: "from-red-500 to-yellow-600"
+	},
+	{
+		name: "Yoshi",
+		profiles: profiles('yoshi'),
+		gradient: "from-yellow-600 to-yellow-300"
+	},
+	{
+		name: "Emma",
+		profiles: profiles('emma'),
+		gradient: "from-yellow-300 to-green-400"
+	},
+	{
+		name: "PS",
+		profiles: profiles('ps'),
+		gradient: "from-green-400 to-green-300"
+	},
+	{
+		name: "Flaw",
+		profiles: profiles('flaw'),
+		gradient: "from-green-300 to-blue-400"
+	},
+	{
+		name: "Vanillas",
+		profiles: profiles('vanillas'),
+		gradient: "from-blue-400 to-purple-500"
+	},
+]
 
 module.exports.set = (app) => {
 	app.get('/', (req, res) => {

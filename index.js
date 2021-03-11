@@ -6,6 +6,15 @@ let app = express();
 let routes = require('./routes');
 let hbs = require('hbs');
 
+hbs.registerHelper('loadcss', function () {
+	if(process.env.NODE_ENV === 'production') {
+		return 'style.min.css';
+	}
+	else {
+		return 'style.css';
+	}
+});
+
 app.set('port', process.env.PORT || 8080);
 app.set('trust proxy', true);
 

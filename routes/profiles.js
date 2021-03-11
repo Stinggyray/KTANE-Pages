@@ -10,6 +10,12 @@ let modules = require('../json/modules.json');
 let fs = require('fs');
 let path = require('path');
 
+let baseNameChanges = {
+	"Morse Code Translated": "Morse Code all languages condensed (S.)",
+	"Passwords Translated": "Password all languages condensed (S.)",
+	"Venting Gas Translated": "Venting Gas all languages condensed (S.)",
+	"Who's on First Translated": "Who's on First all languages condensed (S.)",
+}
 let altIcons = {
 	"Passwords Translated": "Password",
 	"Big Button Translated": "The Button",
@@ -49,17 +55,13 @@ let universalAltManuals = {
 	"Memory": "Memory condensed (Timwi)",
 	"Minesweeper": "Minesweeper condensed (Stinggyray)",
 	"Monsplode, Fight!": "Monsplode, Fight! colored",
-	"Morse Code Translated": "Morse Code all languages condensed (S.)",
 	"Orientation Cube": "Orientation Cube optimized (CaitSith2)",
-	"Passwords Translated": "Password all languages condensed (S.)",
 	"Piano Keys": "Piano Keys embellished (Rexkix)",
 	"Probing": "Probing condensed (Stinggyray)",
 	"Rock-Paper-Scissors-Lizard-Spock": "Rock-Paper-Scissors-Lizard-Spock embellished (Rexkix)",
 	"Switches": "Switches optimized (Nanthelas)",
 	"The Bulb": "The Bulb lookup table (Elias)",
 	"Third Base": "Third Base alphabetized (Timwi)",
-	"Venting Gas Translated": "Venting Gas all languages condensed (S.)",
-	"Who's on First Translated": "Who's on First all languages condensed (S.)",
 	"Wire Placement": "Wire Placement embellished (Timwi)"
 }
 let stingAltManuals = {
@@ -74,6 +76,7 @@ let stingAltManuals = {
 	"Coordinates": "Coordinates optimized (Blananas2)",
 	"Creation": "Creation lookup table (JakkOfKlubs & Stinggyray)",
 	"Double-Oh": "Double-Oh embellished (samfundev)",
+	"Festive Piano Keys": "Festive Piano Keys optimized (JakkOfKlubs)",
 	"Flags": "Flags optimized (Timwi)",
 	"Logic": "Logic optimized (Stinggyray)",
 	"Mafia": "Mafia optimized (Timwi)",
@@ -156,9 +159,9 @@ function transcodeProfile(profile, altManuals) {
 	enabledList.forEach((entry) => {
 		let newEntry = {
 			moduleName: altNames[entry] ?? entry,
-			manualLink: altManuals[entry] ?? universalAltManuals[entry] ?? entry,
+			manualLink: altManuals[entry] ?? universalAltManuals[entry] ?? baseNameChanges[entry] ?? entry,
 			iconName: altIcons[entry] ?? entry,
-
+			originalManualLink: baseNameChanges[entry] ?? entry
 		};
 		newEntry.pageExists = fs.existsSync(path.join(__dirname, '../static/' + newEntry.manualLink + ".html"))
 		newConstructedList.push(newEntry);
