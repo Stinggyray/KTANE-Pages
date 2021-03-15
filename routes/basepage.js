@@ -97,6 +97,8 @@ let moduleList = [
 
 module.exports.set = (app) => {
 	app.get('/', (req, res) => {
+		res.set('Cache-Control', 'public, max-age=600, stale-while-revalidate=10000000');
+
 		let curPhrase = phrases[Math.floor(Math.random() * phrases.length)];
 		res.render('index', {phrase: curPhrase, modules: moduleList});
 	});
