@@ -70,7 +70,7 @@ let stingAltManuals = {
 	"Astrology": "Astrology lookup table (Elias & samfundev)",
 	"Backgrounds": "Backgrounds condensed (ZekNikZ)",
 	"Bitmaps": "Bitmaps condensed (Stinggyray)",
-	"Broken Buttons": "Broken Buttons condensed (Freelancer1025)",
+	"Broken Buttons": "Broken Buttons condensed (Freelancer1025, Stinggyray)",
 	"Chess": "Chess optimized (Timwi)",
 	"Cooking": "Cooking condensed (Lebossle)",
 	"Coordinates": "Coordinates optimized (Blananas2)",
