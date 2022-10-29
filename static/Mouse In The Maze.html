@@ -40,7 +40,11 @@
                 display: block;
             }
 
-                .mouse-maze svg polygon {
+                .dark .mouse-maze svg path, .dark .mouse-maze svg text {
+                    fill: #DDD;
+                }
+                .dark .mouse-maze svg circle {
+                    filter: invert(80%);
                 }
 
                 .mouse-maze svg text.x-label, .mouse-maze svg text.y-label {
@@ -87,7 +91,7 @@
                     if (((sq / 10) | 0) != 9 && todo.includes(sq + 10))
                         validNeighbors.push(sq + 10);
 
-                    if (validNeighbors.length == 0)
+                    if (validNeighbors.length === 0)
                     {
                         visited.splice(randomSquareIx, 1);
                         continue;

@@ -76,7 +76,7 @@
             document.getElementById('rule-indicator-lit').innerText = litUnlit ? 'lit' : 'unlit';
 
             let startAt = (rnd.next(0, 12) + 5) % 12;
-            document.getElementById('rule-else').innerText = startAt ? `clockwise after plug ${startAt}` : 'earliest in numerical order';
+            document.getElementById('rule-else').innerText = startAt ? `clockwise after wire ${startAt}` : 'earliest in numerical order';
 
             let startingRuleConditions = [
                 ["alphabetically first letter in any indicator", "If there are no indicators"],
@@ -94,7 +94,7 @@
 
             let colors = ["red", "green", "blue", "white", "black", "yellow"];
             rnd.shuffleFisherYates(colors);
-            document.getElementById('rule-reverse-colors').innerText = `${colors[0]}, ${colors[1]} or ${colors[2]}`;
+            document.getElementById('rule-reverse-colors').innerText = `${colors[0]}, ${colors[1]}, or ${colors[2]}`;
 
             let tableRules = [
                 "Cut this wire.",
@@ -107,7 +107,7 @@
                 "The previous wire should not be cut.",
                 "The previous two wires are the same color.",
                 "The previous two wires are different colors.",
-                "Two of the previous three wires share a color.",
+                "At least two of the previous three wires share a color.",
                 "The previous three wires have different colors.",
                 "The previous three wires are all the same color.",
                 "The previous wire has the same color as this wire.",
@@ -231,7 +231,7 @@
             <div class="page-content">
                 <h3>Cutting wires</h3>
                 <ul>
-                    <li><u>Always</u> cut the wire at the starting plug.Then progress to the next wire.</li>
+                    <li><u>Always</u> cut the wire at the starting plug. Then progress to the next wire.</li>
                     <li>From this position, cut the wires as directed by the steps in the following table.  The starting step corresponds to the <span class='rule' id='rule-starting-step'>first letter in the serial number</span>. <span id='rule-starting-step-fallback'>If the serial number contains no letters</span>, begin at step <span class='rule' id='rule-starting-step-fallback-step'>A</span>.</li>
                     <li>When progressing to the next wire, also progress to the next step alphabetically in the table to determine whether to cut the wire.</li>
                     <li>“Previous wire(s)” may refer to wires beyond the original starting position in the sequence.</li>
@@ -260,7 +260,7 @@
                     </tr>
                     <tr>
                         <th>E or R</th>
-                        <td class='table-rule'>Two of the previous three wires share a color.</td>
+                        <td class='table-rule'>At least two of the previous three wires share a color.</td>
                     </tr>
                     <tr>
                         <th>F or S</th>

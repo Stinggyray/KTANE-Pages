@@ -25,10 +25,7 @@
         .partial-solutions td {
             text-align: center;
         }
-        table {
-            border: none;
-        }
-        .corner {
+        .dark table, table {
             border: none;
         }
     </style>
@@ -58,13 +55,13 @@
                                     <tr><td>X</td><td></td><td>X</td></tr>
                                 </table>
                                 The middle number determines which row/column to use.  If the last digit in the serial number is in one of the five cross positions as shown in the diagram on the right, use rows.  Otherwise, use columns.</li>
-                            <li>Start from the empty position on the module.  Using the table below, consider each number in the row/column and check if it's a direct neighbour to the current position.  If it is, continue from that position.  The final position is where the skull is located.</li>
+                            <li>Start from the empty position on the module.  Using the table below, consider each number in the row/column and check if it’s a direct neighbour to the current position.  If it is, continue from that position.  The final position is where the skull is located.</li>
                             <li>To disarm the module, move the sliders into a target constellation shown on the next page.</li>
                         </ol>
                     </li>
                 </ol>
                 <table>
-                    <tr><td class='corner'></td><td class='corner'></td><td colspan=9>last serial digit does not lie on<br>the cross-parts of the module</td></tr>
+                    <tr><td class='corner'></td><td class='corner'></td><td colspan=8>last serial digit does not lie on<br>the cross-parts of the module</td></tr>
                     <tr><td class='corner'></td><td>number in the middle<br> of the module</td><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th></tr>
                     <tr><td rowspan=8>on the<br>cross-<br>part</td>
                     <th>1</th><td>1</td><td>3</td><td>5</td><td>4</td><td>6</td><td>7</td><td>2</td><td>8</tr>

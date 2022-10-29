@@ -62,7 +62,8 @@ let universalAltManuals = {
 	"Switches": "Switches optimized (Nanthelas)",
 	"The Bulb": "The Bulb lookup table (Elias)",
 	"Third Base": "Third Base alphabetized (Timwi)",
-	"Wire Placement": "Wire Placement embellished (Timwi)"
+	"Wire Placement": "Wire Placement embellished (Timwi)",
+	"Prime Encryption": "Prime Encryption lookup table (Eltrick)"
 }
 let stingAltManuals = {
 	"Adjacent Letters": "Adjacent Letters lookup table (samfundev & Elias)",
