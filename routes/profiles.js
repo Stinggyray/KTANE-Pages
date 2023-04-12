@@ -109,6 +109,7 @@ let yoshiAltManuals = {
 	"LED Encryption": "LED Encryption lookup table (JakkOfKlubs)",
 	"Logic": "Logic optimized (LeGeND)",
 	"Mafia": "Mafia optimized (Timwi)",
+	"Microcontroller": "Microcontroller optimized (Elias)",
 	"Neutralization": "Neutralization condensed (samfundev)",
 	"Number Pad": "Number Pad lookup table (CaitSith2)",
 	//"Perplexing Wires": "Perplexing Wires lookup table (ZekNikZ)",
