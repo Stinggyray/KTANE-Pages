@@ -8,68 +8,10 @@
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <script src="js/ktane-utils.js"></script>
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="js/jquery.3.1.1.min.js"></script>
     <script>
-        let defaultRules = null;
         let letters = ['a','b','c','d','e','f'];
         let numbers = ['1','2','3','4','5','6'];
-
-        function getDefaultRules() {
-            if (defaultRules !== null) return;
-            defaultRules = {};
-            for (let rule = 1; rule <=6; rule++) {
-                defaultRules[rule] = document.getElementById(`rule${rule}`).innerHTML;
-            }
-        }
-
-        function setDefaultRules()
-        {
-            getDefaultRules();
-            makeBoard();
-            for (let i = 1; i <= 6; i++) {
-                let span = document.getElementById(`rule${i}`);
-
-                span.innerHTML = defaultRules[i].replace("{i}",i).replace("{j}",5);
-            }
-            letters = ['a','b','c','d','e','f'];
-            numbers = ['1','2','3','4','5','6'];
-            updateChessboardLabels();
-        }
-
-        function setRules(rnd)
-        {
-            getDefaultRules();
-            makeBoard();
-            let order = [1,2,3,4,5,6];
-            rnd.shuffleFisherYates(order);
-            let ind = order.indexOf(5);
-
-            let invertX = rnd.nextInt() % 2 == 0;
-            let invertY = rnd.nextInt() % 2 == 0;
-            let swap = rnd.nextInt() % 2 == 0;
-            let invertField = rnd.nextInt() % 2 == 1;
-            let invertSerial = rnd.nextInt() % 2 == 0;
-            for (let i = 0; i < 6; i++) {
-                let span = document.getElementById(`rule${i+1}`);
-                let inner = defaultRules[order[i]].replace("{i}",i+1);
-                switch (order[i]) {
-                    case 1: inner = inner.replace("{j}",ind+1); break;
-                    case 2: inner = inner.replace("odd", invertSerial == true ? "even" : "odd"); break;
-                    case 5: inner = inner.replace("white", invertField == true ? "black" : "white"); break;
-                }
-                span.innerHTML = inner;
-            }
-            letters = ['a','b','c','d','e','f'];
-            numbers = ['1','2','3','4','5','6'];
-            if (invertX) letters.reverse();
-            if (invertY) numbers.reverse();
-            if (swap) {
-                let tmp = letters;
-                letters = numbers;
-                numbers = tmp;
-            }
-            updateChessboardLabels();
-        }
 
         function updateChessboardLabels() {
             for (let i = 0; i < 6; i++) {
@@ -193,11 +135,17 @@
                 $(".black.square, .white.square").text("").removeClass("occupied");
             });
         }
+
+        $(document).ready(() => {
+            makeBoard();
+            updateChessboardLabels();
+        })
     </script>
     <style>
         .chess-cheat { clear: both; border: none; width: 100%; }
         .chess-cheat td { text-align: center; }
         p.note { font-size: 80%; margin-top: 2em; }
+
         .chess-board {
             width: 424px;
         }
@@ -348,15 +296,9 @@
                 <p class='note'>* Add the coordinate’s letter (a–f = 1–6) and its number and see if the result is odd or even.</p>
                 <h3>Chessboard</h3>
                 <p>Use the following interactive graphic as a chessboard.
-                <p>Select one of the tools below the chessboard then click on the chessboard to use that tool.
-                    <br>
-                    Use one of the chess pieces tools to place/remove a piece.
-                    <br>
                     Use the marker tool to mark/unmark a square.
                     <br>
                     Drag using the marker tool to mark/unmark several squares.
-                    <br>
-                    You can reset the board using the button below the board.
                 <div class="chessboard"></div>
                 <div class="chess-pieces"></div>
                 <br>
