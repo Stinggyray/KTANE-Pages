@@ -57,7 +57,8 @@ let phrases = [
 	"Simon screams at your incompetence.",
 	"They say Monopoly ruins friendships. They have not tried KTANE.",
 	"holy shit you are bad at directions",
-	"Wait, this doesn't always flicker??????"
+	"Wait, this doesn't always flicker??????",
+	"Emma: I fear no man<br>But that thing... <img src='/icons/The Jukebox.png'> it scares me."
 ]
 
 let profiles = require('./profiles.js');
@@ -99,7 +100,7 @@ module.exports.set = (app) => {
 	app.get('/', (req, res) => {
 		res.set('Cache-Control', 'public, max-age=600, stale-while-revalidate=10000000');
 
-		let curPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+		let curPhrase = phrases[phrases.length - 1]// phrases[Math.floor(Math.random() * phrases.length)];
 		res.render('index', {phrase: curPhrase, modules: moduleList});
 	});
 }
