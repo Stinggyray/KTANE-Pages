@@ -112,7 +112,7 @@ let moduleList = [
 	},
 	{
 		name: "Victoria",
-		profiles: profiles('yoshi'),
+		profiles: profiles('victoria'),
 		gradient: "from-blue-400 to-fuchsia-400"
 	},
 	{
