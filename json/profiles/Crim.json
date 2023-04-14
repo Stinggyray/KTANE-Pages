@@ -46,7 +46,6 @@
     "ColorMorseModule",
     "guitarChords",
     "BigCircle",
-    "jukebox",
     "subways",
     "FaultySink",
     "Sink",
@@ -98,7 +97,6 @@
     "PointOfOrderModule",
     "OrientationCube",
     "OnlyConnectModule",
-    "NumberPad",
     "MouseInTheMaze",
     "neutralization",
     "MysticSquareModule",
@@ -128,7 +126,6 @@
     "CreationModule",
     "CrazyTalk",
     "CoordinatesModule",
-    "graphModule",
     "combinationLock",
     "ColoredSquaresModule",
     "DecoloredSquaresModule",
@@ -171,7 +168,10 @@
     "spwizAdventureGame",
     "Backgrounds",
     "LetterKeys",
-    "murder"
+    "murder",
+    "NumberPad",
+    "graphModule",
+    "jukebox"
   ],
   "Operation": 0
 }

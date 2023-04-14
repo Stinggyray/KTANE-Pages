@@ -117,7 +117,7 @@ let moduleList = [
 	},
 	{
 		name: "Kyler",
-		profiles: profiles('centurion'),
+		profiles: profiles('kyler'),
 		gradient: "from-fuchsia-400 to-purple-400"
 	},
 	{

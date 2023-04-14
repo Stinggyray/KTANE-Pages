@@ -57,7 +57,6 @@
     "monsplodeFight",
     "monsplodeCards",
     "ModuleAgainstHumanity",
-    "Listening",
     "LightCycleModule",
     "LEDEnc",
     "ButtonV2",
@@ -105,7 +104,6 @@
     "BitmapsModule",
     "BitOps",
     "BlindAlleyModule",
-    "BlindMaze",
     "booleanVennModule",
     "britishSlang",
     "TheBulbModule",
@@ -171,7 +169,9 @@
     "MorseAMaze",
     "FlavorText",
     "graffitiNumbers",
-    "primeEncryption"
+    "primeEncryption",
+    "BlindMaze",
+    "Listening"
   ],
   "Operation": 0
 }
