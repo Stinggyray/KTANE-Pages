@@ -68,9 +68,15 @@
 			for(let i = 0; i < elements.length; i++) {
 				if(mode === 'optimized') {
 					elements[i].setAttribute("href", "/" + elements[i].getAttribute("data-optimized") + ".html")
+                    if(elements[i].getAttribute("data-optimized") !== elements[i].getAttribute("data-original")) {
+                        elements[i].classList.remove("text-gray-300")
+                        elements[i].classList.add("text-green-300")
+                    }
 				}
 				if(mode === 'original') {
 					elements[i].setAttribute("href", "/" + elements[i].getAttribute("data-original") + ".html")
+                    elements[i].classList.remove("text-green-300")
+                    elements[i].classList.add("text-gray-300")
 				}
 			}
 
