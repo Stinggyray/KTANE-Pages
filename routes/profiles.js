@@ -161,6 +161,13 @@ let terpAltManuals = {
 
 }
 
+let centurionList = JSON.parse(JSON.stringify(centurion.EnabledList));
+centurionList = new Set(centurionList.map((s) => modules[s]).sort((a, b) => {
+	function getRaw(s) {
+		return s.replace(/^The /, '').trim();
+	}
+	return getRaw(a).localeCompare(getRaw(b));
+}));
 
 function transcodeProfile(profile, altManuals) {
 	let enabledList = profile.EnabledList;
@@ -178,7 +185,8 @@ function transcodeProfile(profile, altManuals) {
 			moduleName: altNames[entry] ?? entry,
 			manualLink: altManuals[entry] ?? universalAltManuals[entry] ?? baseNameChanges[entry] ?? entry,
 			iconName: altIcons[entry] ?? entry,
-			originalManualLink: baseNameChanges[entry] ?? entry
+			originalManualLink: baseNameChanges[entry] ?? entry,
+			centurion: centurionList.has(entry)
 		};
 		newEntry.pageExists = fs.existsSync(path.join(__dirname, '../static/' + newEntry.manualLink + ".html"))
 		newConstructedList.push(newEntry);
@@ -187,6 +195,7 @@ function transcodeProfile(profile, altManuals) {
 	return newConstructedList;
 }
 
+centurion = transcodeProfile(centurion, {});
 sting = transcodeProfile(sting, stingAltManuals);
 yoshi = transcodeProfile(yoshi, yoshiAltManuals);
 emma = transcodeProfile(emma, emmaAltManuals);
@@ -195,7 +204,6 @@ flaw = transcodeProfile(flaw, flawAltManuals);
 victoria = transcodeProfile(victoria, victoriaAltManuals);
 crim = transcodeProfile(crim, crimAltManuals);
 terp = transcodeProfile(terp, terpAltManuals);
-centurion = transcodeProfile(centurion, {});
 
 module.exports = (name) => {
 	switch(name) {

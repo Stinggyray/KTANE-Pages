@@ -84,6 +84,34 @@
 			Cookies.set('mode', mode);
 		}
 
+        let centurion = false;
+        function setCenturion(yn) {
+            if(yn !== "yes") {
+                document.getElementById("centurionNo").classList.add("bg-green-400");
+                document.getElementById("centurionNo").classList.add("text-black");
+                document.getElementById("centurionYes").classList.remove("bg-green-400");
+                document.getElementById("centurionYes").classList.remove("text-black");
+            } else {
+                document.getElementById("centurionYes").classList.add("bg-green-400");
+                document.getElementById("centurionYes").classList.add("text-black");
+                document.getElementById("centurionNo").classList.remove("bg-green-400");
+                document.getElementById("centurionNo").classList.remove("text-black");
+            }
+
+            let elements = document.getElementsByClassName("module");
+
+            for(let i = 0; i < elements.length; i++) {
+                if(yn === "yes") {
+                    if(elements[i].getAttribute("data-centurion") === "false") {
+                        elements[i].style = "display: none !important";
+                    }
+                }
+                else {
+                    elements[i].style = "";
+                }
+            }
+        }
+
 		function loadCookie() {
 			if(Cookies.get('name')) {
 				setActiveUser(Cookies.get('name'));
@@ -142,7 +170,15 @@
 					</button>
 				</div>
 				<div class="flex-col flex-1">
-
+                    <h2 class="font-bold">
+                        Filter
+                    </h2>
+                    <button onclick="setCenturion('yes');" id="centurionYes" class="mt-2 py-1.5 bg-gray-800 rounded-md w-2/3">
+                        Centurion Only
+                    </button>
+                    <button onclick="setCenturion('no');" id="centurionNo" class="mt-2 py-2 bg-gray-800 rounded-md w-2/3">
+                        All
+                    </button>
 				</div>
 			</div>
 		</div>
@@ -156,7 +192,7 @@
 			<div class="w-11/12 mt-3 mx-auto rounded-lg bg-gray-700 p-5">
 				<ul class="profile-list compact">
 					{{#each profiles}}
-						<li>
+						<li class="module" data-centurion="{{this.centurion}}">
 							<div class="flex content-center items-center">
 								<img class="icon mr-2" src="icons/{{this.iconName}}.png">
 								<a href="/{{this.manualLink}}.html" data-optimized="{{this.manualLink}}" data-original="{{this.originalManualLink}}" class="page-link font-medium {{#if pageExists}}text-gray-300{{else}}text-red-500{{/if}}">{{this.moduleName}}</a>
