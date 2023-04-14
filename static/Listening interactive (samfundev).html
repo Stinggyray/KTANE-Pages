@@ -106,7 +106,7 @@
                     .on("error", function() {
                         button.addClass("failed");
                     })
-                    .attr("src", "../HTML/audio/Listening Sounds/" + elem.text().replace(/[^\w]/g, "") + ".mp3")
+                    .attr("src", "../audio/Listening Sounds/" + elem.text().replace(/[^\w]/g, "") + ".mp3")
                     .on("ended", function() {
                         button.removeClass("playing");
                     })
