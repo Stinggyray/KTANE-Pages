@@ -9,23 +9,22 @@ let grayColors = colors.gray;
 //grayColors[800] = "#000000"
 
 module.exports = {
-  purge: {
+    mode: 'jit',
     content: [
         './views/**/*.hbs',
         './routes/**/*.js'
     ],
-  },
-  darkMode: false, // or 'media' or 'class'
-  theme: {
-    extend: {
-      colors: {
-        gray: grayColors, //colors.gray //colors.trueGray
-        yellow: colors.amber
-      },
+    theme: {
+        extend: {
+            colors: {
+                gray: colors.neutral, //colors.gray //colors.trueGray
+                yellow: colors.amber,
+
+            },
+        },
     },
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
+    variants: {
+        extend: {},
+    },
+    plugins: [],
 }

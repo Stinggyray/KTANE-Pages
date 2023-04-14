@@ -1,9 +1,12 @@
 let sting = require('../json/profiles/Sting.json');
 let yoshi = require('../json/profiles/Yoshi.json');
 let emma = require('../json/profiles/Emma.json');
-let ps = require('../json/profiles/PS.json');
 let vanillas = require('../json/profiles/Vanilla.json');
 let flaw = require('../json/profiles/Flaw.json');
+let victoria = require('../json/profiles/Victoria.json');
+let crim = require('../json/profiles/Crim.json');
+let terp = require('../json/profiles/Terp.json');
+let centurion = require('../json/profiles/Centurion.json');
 
 let modules = require('../json/modules.json');
 
@@ -148,6 +151,17 @@ let vanillasAltManuals = {
 	"Who's on First": "Who's on First alphabetized (Timwi)"
 }
 
+let victoriaAltManuals = {
+
+}
+let crimAltManuals = {
+
+}
+let terpAltManuals = {
+
+}
+
+
 function transcodeProfile(profile, altManuals) {
 	let enabledList = profile.EnabledList;
 	enabledList = enabledList.map((s) => modules[s]).sort((a, b) => {
@@ -176,16 +190,22 @@ function transcodeProfile(profile, altManuals) {
 sting = transcodeProfile(sting, stingAltManuals);
 yoshi = transcodeProfile(yoshi, yoshiAltManuals);
 emma = transcodeProfile(emma, emmaAltManuals);
-ps = transcodeProfile(ps, psAltManuals);
 vanillas = transcodeProfile(vanillas, vanillasAltManuals);
 flaw = transcodeProfile(flaw, flawAltManuals);
+victoria = transcodeProfile(victoria, victoriaAltManuals);
+crim = transcodeProfile(crim, crimAltManuals);
+terp = transcodeProfile(terp, terpAltManuals);
+centurion = transcodeProfile(centurion, {});
 
 module.exports = (name) => {
 	switch(name) {
 		case "sting": return sting;
 		case "yoshi": return yoshi;
 		case "emma": return emma;
-		case "ps": return ps;
+		case "terp": return terp;
+		case "crim": return crim;
+		case "victoria": return victoria;
+		case "centurion": return centurion;
 		case "vanillas": return vanillas;
 		case "flaw": return flaw;
 	}

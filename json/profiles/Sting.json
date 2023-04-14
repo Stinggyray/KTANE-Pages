@@ -90,7 +90,9 @@
     "MarbleTumbleModule",
     "Color Generator",
     "iceCreamModule",
-    "FlavorTextCruel"
+    "FlavorTextCruel",
+    "greatVoid",
+    "NotColoredSquaresModule"
   ],
   "EnabledList": [
     "AdjacentLettersModule",
@@ -168,7 +170,8 @@
     "FestivePianoKeys",
     "MorseAMaze",
     "FlavorText",
-    "graffitiNumbers"
+    "graffitiNumbers",
+    "primeEncryption"
   ],
   "Operation": 0
 }

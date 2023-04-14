@@ -15,6 +15,24 @@ hbs.registerHelper('loadcss', function () {
 	}
 });
 
+hbs.registerHelper('grouped_each', function(every, context, options) {
+	let out = "";
+	let subcontext = [];
+	let i;
+
+	if (context && context.length > 0) {
+		for (i = 0; i < context.length; i++) {
+			if (i > 0 && i % every === 0) {
+				out += options.fn(subcontext);
+				subcontext = [];
+			}
+			subcontext.push(context[i]);
+		}
+		out += options.fn(subcontext);
+	}
+	return out;
+});
+
 app.set('port', process.env.PORT || 8080);
 app.set('trust proxy', true);
 

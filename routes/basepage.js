@@ -58,7 +58,23 @@ let phrases = [
 	"They say Monopoly ruins friendships. They have not tried KTANE.",
 	"holy shit you are bad at directions",
 	"Wait, this doesn't always flicker??????",
-	"Emma: I fear no man<br>But that thing... <img src='/icons/The Jukebox.png'> it scares me."
+	"Emma: I fear no man<br>But that thing... <img src='/icons/The Jukebox.png'> it scares me.",
+	"AHHHHHHHHHHHH MY EARS *goes AFK*",
+	"How was I supposed to defeat deformed Sting??",
+	"Yoshi AKA. The Weekday",
+	"black man unhappy after wife has sting as child",
+	"Take an unwilling trip on my penis carriage",
+	"I got 99 problems but laundry ain't on- never mind it is definitely one of them",
+	"Spider, snail, lobster, fly, squirrel. Spider, snail, lobster, fly, squirrel. Spider, snail, lobster, squirrel... fuck.",
+	"TIP: Alt-Click to highlight square, Ctrl-Click to highlight column, Shift-Click to highlight row",
+	"\"Nope we just struck\" \"Wait... we have a serial port, we're cooking for Harry...\"<br>\"WHO LET YOU COOK???\"",
+	"\"Alright Yoshi we're going to start you on skewed slots\"<br>\"FUUUUUUUUUU\"",
+	"Yahtzee be like: <i>rolls dice with felonious intent</i>",
+	"\'I'm not cheating, but if I was, I wou-\"<br>\"I will find you and shit in your salad\"",
+	"\"Alright Sting, we're going to start you on a Word Fi-\"<br>\"If you say Word Find one more time I will Word Find you\"",
+	"oh the misery<br>everyone wants to do my blind alley",
+	"*26:02 left, only Turn The Key left at 2:32*<br>\"Is this how Dennis feels when loading into VALORANT\"",
+	"TOP 10 TIMES EMMA AND FLAW SOLVED ZOO WITHOUT GRIEFING<br><br>THANKS FOR WATCHING!!"
 ]
 
 let profiles = require('./profiles.js');
@@ -80,19 +96,39 @@ let moduleList = [
 		gradient: "from-yellow-300 to-green-400"
 	},
 	{
-		name: "PS",
-		profiles: profiles('ps'),
+		name: "Crim",
+		profiles: profiles('crim'),
 		gradient: "from-green-400 to-green-300"
 	},
 	{
 		name: "Flaw",
 		profiles: profiles('flaw'),
-		gradient: "from-green-300 to-blue-400"
+		gradient: "from-green-300 to-sky-400"
+	},
+	{
+		name: "Terpage",
+		profiles: profiles('terp'),
+		gradient: "from-sky-400 to-blue-400"
+	},
+	{
+		name: "Victoria",
+		profiles: profiles('yoshi'),
+		gradient: "from-blue-400 to-fuchsia-400"
+	},
+	{
+		name: "Kyler",
+		profiles: profiles('centurion'),
+		gradient: "from-fuchsia-400 to-purple-400"
+	},
+	{
+		name: "Centurion",
+		profiles: profiles('centurion'),
+		gradient: "from-purple-400 to-violet-500"
 	},
 	{
 		name: "Vanillas",
 		profiles: profiles('vanillas'),
-		gradient: "from-blue-400 to-purple-500"
+		gradient: "from-violet-500 to-indigo-400"
 	},
 ]
 
@@ -100,7 +136,7 @@ module.exports.set = (app) => {
 	app.get('/', (req, res) => {
 		res.set('Cache-Control', 'public, max-age=600, stale-while-revalidate=10000000');
 
-		let curPhrase = phrases[phrases.length - 1]// phrases[Math.floor(Math.random() * phrases.length)];
+		let curPhrase = phrases[Math.floor(Math.random() * phrases.length)];
 		res.render('index', {phrase: curPhrase, modules: moduleList});
 	});
 }
