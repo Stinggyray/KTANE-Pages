@@ -55,7 +55,6 @@
     "monsplodeCards",
     "ModuleAgainstHumanity",
     "LightCycleModule",
-    "LEDEnc",
     "ButtonV2",
     "KeypadV2",
     "MemoryV2",
@@ -78,7 +77,6 @@
     "YahtzeeModule",
     "SillySlots",
     "NumberPad",
-    "MouseInTheMaze",
     "MysticSquareModule",
     "kookyKeypadModule",
     "MarbleTumbleModule",
@@ -171,7 +169,9 @@
     "Listening",
     "SkewedSlotsModule",
     "ExtendedPassword",
-    "PianoKeys"
+    "PianoKeys",
+    "MouseInTheMaze",
+    "LEDEnc"
   ],
   "Operation": 0
 }
