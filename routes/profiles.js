@@ -85,6 +85,7 @@ let stingAltManuals = {
 	"Double-Oh": "Double-Oh embellished (samfundev)",
 	"Festive Piano Keys": "Festive Piano Keys optimized (JakkOfKlubs)",
 	"Flags": "Flags optimized (Timwi)",
+	"LED Encryption": "LED Encryption lookup table (JakkOfKlubs)",
 	"Logic": "Logic optimized (Stinggyray)",
 	"Mafia": "Mafia optimized (Timwi)",
 	"Microcontroller": "Microcontroller optimized (Elias)",
