@@ -74,7 +74,8 @@ let phrases = [
 	"\"Alright Sting, we're going to start you on a Word Fi-\"<br>\"If you say Word Find one more time I will Word Find you\"",
 	"oh the misery<br>everyone wants to do my blind alley",
 	"*26:02 left, only Turn The Key left at 2:32*<br>\"Is this how Dennis feels when loading into VALORANT\"",
-	"TOP 10 TIMES EMMA AND FLAW SOLVED ZOO WITHOUT GRIEFING<br><br>THANKS FOR WATCHING!!"
+	"TOP 10 TIMES EMMA AND FLAW SOLVED ZOO WITHOUT GRIEFING<br><br>THANKS FOR WATCHING!!",
+	"Unscrew the bulb. Is it on?"
 ]
 
 let profiles = require('./profiles.js');
