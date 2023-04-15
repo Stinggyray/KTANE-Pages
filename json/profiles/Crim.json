@@ -21,7 +21,6 @@
     "MorseAMaze",
     "MarbleTumbleModule",
     "MusicRhythms",
-    "ExtendedPassword",
     "TheDigitModule",
     "buttonSequencesModule",
     "complicatedButtonsModule",
@@ -68,7 +67,6 @@
     "TwoBits",
     "TurnTheKeyAdvanced",
     "TurnTheKey",
-    "BigButtonTranslated",
     "MorseCodeTranslated",
     "PasswordsTranslated",
     "WhosOnFirstTranslated",
@@ -94,7 +92,6 @@
     "CruelPianoKeys",
     "FestivePianoKeys",
     "PianoKeys",
-    "PointOfOrderModule",
     "OrientationCube",
     "OnlyConnectModule",
     "MouseInTheMaze",
@@ -171,7 +168,10 @@
     "murder",
     "NumberPad",
     "graphModule",
-    "jukebox"
+    "jukebox",
+    "PointOfOrderModule",
+    "BigButtonTranslated",
+    "ExtendedPassword"
   ],
   "Operation": 0
 }

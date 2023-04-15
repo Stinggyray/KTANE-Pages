@@ -96,6 +96,7 @@ let stingAltManuals = {
 	"Safety Safe": "Safety Safe condensed (samfundev & Stinggyray)",
 	"Simon Screams": "Simon Screams condensed fixed (samfundev)",
 	"Simon States": "Simon States condensed (Nanthelas)",
+	"Skewed Slots": "Skewed Slots optimized (Timwi)",
 	"The Festive Jukebox": "The Festive Jukebox optimized (Timwi)",
 	"The Gamepad": "The Gamepad lookup table (Timwi)",
 	"The Jukebox": "The Jukebox optimized (Timwi)",

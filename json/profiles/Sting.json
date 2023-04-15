@@ -27,7 +27,6 @@
     "subways",
     "FaultySink",
     "Sink",
-    "poetry",
     "theSwan",
     "BlackHoleModule",
     "Painting",
@@ -43,13 +42,11 @@
     "screw",
     "TextField",
     "switchModule",
-    "SkewedSlotsModule",
     "shapeshift",
     "Semaphore",
     "SeaShells",
     "MusicRhythms",
     "CruelPianoKeys",
-    "PianoKeys",
     "PointOfOrderModule",
     "OnlyConnectModule",
     "neutralization",
@@ -84,13 +81,13 @@
     "MouseInTheMaze",
     "MysticSquareModule",
     "kookyKeypadModule",
-    "ExtendedPassword",
     "MarbleTumbleModule",
     "Color Generator",
     "iceCreamModule",
     "FlavorTextCruel",
     "greatVoid",
-    "NotColoredSquaresModule"
+    "NotColoredSquaresModule",
+    "poetry"
   ],
   "EnabledList": [
     "AdjacentLettersModule",
@@ -171,7 +168,10 @@
     "graffitiNumbers",
     "primeEncryption",
     "BlindMaze",
-    "Listening"
+    "Listening",
+    "SkewedSlotsModule",
+    "ExtendedPassword",
+    "PianoKeys"
   ],
   "Operation": 0
 }
