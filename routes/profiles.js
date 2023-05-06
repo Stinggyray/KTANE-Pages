@@ -79,6 +79,7 @@ let stingAltManuals = {
 	"Blind Maze": "Blind Maze interactive (samfundev)",
 	"Broken Buttons": "Broken Buttons condensed (Freelancer1025, Stinggyray)",
 	"Chess": "Chess optimized (Timwi)",
+	"Chord Qualities": "Chord Qualities optimized (Timwi)",
 	"Cooking": "Cooking condensed (Lebossle)",
 	"Coordinates": "Coordinates optimized (Blananas2)",
 	"Creation": "Creation lookup table (JakkOfKlubs & Stinggyray)",
