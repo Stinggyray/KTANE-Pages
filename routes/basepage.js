@@ -76,7 +76,13 @@ let phrases = [
 	"*26:02 left, only Turn The Key left at 2:32*<br>\"Is this how Dennis feels when loading into VALORANT\"",
 	"TOP 10 TIMES EMMA AND FLAW SOLVED ZOO WITHOUT GRIEFING<br><br>THANKS FOR WATCHING!!",
 	"Unscrew the bulb. Is it on?",
-	"I WILL NOT PUSH THE FUCKING BUTTON"
+	"I WILL NOT PUSH THE FUCKING BUTTON",
+	"Alright, Creation. Day 1: Finesse 🤌, wait no... Moyai 🗿",
+	"MARLEY ESTABA MUERTO",
+	"ඞ",
+	"PERO A SCROOGE",
+	"SEA SELLS SHE SELLS ON DEEZ NUTS",
+	"I'd like some ice cream, please. Grunkle Squeaky flavor"
 ]
 
 let profiles = require('./profiles.js');
