@@ -75,7 +75,6 @@
     "NumberPad",
     "MysticSquareModule",
     "kookyKeypadModule",
-    "MarbleTumbleModule",
     "Color Generator",
     "iceCreamModule",
     "FlavorTextCruel",
@@ -173,7 +172,8 @@
     "LEDEnc",
     "shapeshift",
     "ZooModule",
-    "ChordQualities"
+    "ChordQualities",
+    "MarbleTumbleModule"
   ],
   "Operation": 0
 }
