@@ -67,7 +67,10 @@
     "mashematics",
     "FlagsModule",
     "jukebox",
-    "NotColoredSquaresModule"
+    "NotColoredSquaresModule",
+    "TDSAmogus",
+    "impostor",
+    "LightsOut"
   ],
   "EnabledList": [
     "NeedyBeer",

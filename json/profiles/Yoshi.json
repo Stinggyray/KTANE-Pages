@@ -54,7 +54,6 @@
     "wire",
     "WordScrambleModule",
     "WordSearchModulePL",
-    "ZooModule",
     "monsplodeWho",
     "VentGasTranslated",
     "NeedyKnobV2",
@@ -72,7 +71,10 @@
     "DoubleOhModule",
     "FlavorTextCruel",
     "greatVoid",
-    "NotColoredSquaresModule"
+    "NotColoredSquaresModule",
+    "TDSAmogus",
+    "impostor",
+    "LightsOut"
   ],
   "EnabledList": [
     "MafiaModule",
@@ -171,7 +173,8 @@
     "FriendshipModule",
     "Microcontroller",
     "BrokenButtonsModule",
-    "MorseCodeTranslated"
+    "MorseCodeTranslated",
+    "ZooModule"
   ],
   "Operation": 0
 }

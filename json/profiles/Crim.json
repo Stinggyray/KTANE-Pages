@@ -158,7 +158,10 @@
     "SouvenirModule",
     "FlavorText",
     "FlavorTextCruel",
-    "wastemanagement"
+    "wastemanagement",
+    "TDSAmogus",
+    "impostor",
+    "LightsOut"
   ],
   "EnabledList": [
     "poetry",

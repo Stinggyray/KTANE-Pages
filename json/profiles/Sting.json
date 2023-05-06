@@ -32,8 +32,6 @@
     "Painting",
     "iPhone",
     "PerplexingWiresModule",
-    "logicGates",
-    "ZooModule",
     "WordSearchModulePL",
     "TurnTheKeyAdvanced",
     "TurnTheKey",
@@ -42,7 +40,6 @@
     "screw",
     "TextField",
     "switchModule",
-    "shapeshift",
     "Semaphore",
     "SeaShells",
     "MusicRhythms",
@@ -85,7 +82,10 @@
     "FlavorTextCruel",
     "greatVoid",
     "NotColoredSquaresModule",
-    "poetry"
+    "poetry",
+    "TDSAmogus",
+    "impostor",
+    "LightsOut"
   ],
   "EnabledList": [
     "AdjacentLettersModule",
@@ -171,7 +171,10 @@
     "ExtendedPassword",
     "PianoKeys",
     "MouseInTheMaze",
-    "LEDEnc"
+    "LEDEnc",
+    "logicGates",
+    "shapeshift",
+    "ZooModule"
   ],
   "Operation": 0
 }

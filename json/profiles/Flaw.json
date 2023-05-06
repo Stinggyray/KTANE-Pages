@@ -158,7 +158,8 @@
     "FlavorTextCruel",
     "greatVoid",
     "primeEncryption",
-    "NotColoredSquaresModule"
+    "NotColoredSquaresModule",
+    "LightsOut"
   ],
   "EnabledList": [
     "BattleshipModule",
@@ -171,7 +172,9 @@
     "EnglishTest",
     "TurnTheKey",
     "TurnTheKeyAdvanced",
-    "WordScrambleModule"
+    "WordScrambleModule",
+    "TDSAmogus",
+    "impostor"
   ],
   "Operation": 0
 }
