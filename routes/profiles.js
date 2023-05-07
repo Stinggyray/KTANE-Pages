@@ -63,7 +63,7 @@ let universalAltManuals = {
 	"Piano Keys": "Piano Keys embellished (Rexkix)",
 	"Probing": "Probing condensed (Stinggyray)",
 	"Rock-Paper-Scissors-Lizard-Spock": "Rock-Paper-Scissors-Lizard-Spock embellished (Rexkix)",
-	"Switches": "Switches optimized (Nanthelas)",
+	"Switches": "Switches embellished (Rexkix)",
 	"The Bulb": "The Bulb lookup table (Elias)",
 	"Third Base": "Third Base alphabetized (Timwi)",
 	"Wire Placement": "Wire Placement embellished (Timwi)",
