@@ -50,7 +50,6 @@
     "VaricoloredSquaresModule",
     "wastemanagement",
     "webDesign",
-    "WhosOnFirstTranslated",
     "wire",
     "WordScrambleModule",
     "WordSearchModulePL",
@@ -74,7 +73,8 @@
     "NotColoredSquaresModule",
     "TDSAmogus",
     "impostor",
-    "LightsOut"
+    "LightsOut",
+    "MarbleTumbleModule"
   ],
   "EnabledList": [
     "MafiaModule",
@@ -153,7 +153,6 @@
     "complicatedButtonsModule",
     "ExtendedPassword",
     "Color Generator",
-    "MarbleTumbleModule",
     "mashematics",
     "PerplexingWiresModule",
     "europeanTravel",
@@ -174,7 +173,8 @@
     "Microcontroller",
     "BrokenButtonsModule",
     "MorseCodeTranslated",
-    "ZooModule"
+    "ZooModule",
+    "WhosOnFirstTranslated"
   ],
   "Operation": 0
 }
