@@ -46,7 +46,6 @@
     "CruelPianoKeys",
     "PointOfOrderModule",
     "OnlyConnectModule",
-    "neutralization",
     "murder",
     "monsplodeFight",
     "monsplodeCards",
@@ -173,7 +172,7 @@
     "shapeshift",
     "ZooModule",
     "ChordQualities",
-    "MarbleTumbleModule"
+    "neutralization"
   ],
   "Operation": 0
 }
