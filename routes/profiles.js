@@ -116,6 +116,7 @@ let yoshiAltManuals = {
 	"Complicated Buttons": "Complicated Buttons optimized (Timwi)",
 	"Connection Check": "Connection Check optimized (Elias)",
 	"Follow the Leader": "Follow the Leader condensed (Nanthelas)",
+	"Ice Cream": "Ice Cream lookup table (Timwi)",
 	"LED Encryption": "LED Encryption lookup table (JakkOfKlubs)",
 	"Logic": "Logic optimized (LeGeND)",
 	"Mafia": "Mafia optimized (Timwi)",
