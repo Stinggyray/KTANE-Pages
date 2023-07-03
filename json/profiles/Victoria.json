@@ -43,7 +43,6 @@
     "subways",
     "FaultySink",
     "Sink",
-    "algebra",
     "poetry",
     "theSwan",
     "BlackHoleModule",
@@ -56,7 +55,6 @@
     "ColoredSwitchesModule",
     "ZooModule",
     "YahtzeeModule",
-    "WordSearchModule",
     "WordSearchModulePL",
     "webDesign",
     "WirePlacementModule",
@@ -78,7 +76,6 @@
     "SkewedSlotsModule",
     "SimonScreamsModule",
     "SillySlots",
-    "shapeshift",
     "Semaphore",
     "SeaShells",
     "RubiksCubeModule",
@@ -103,12 +100,10 @@
     "Emoji Math",
     "Listening",
     "LightCycleModule",
-    "LEDEnc",
     "LetterKeys",
     "Laundry",
     "ButtonV2",
     "KeypadV2",
-    "MazeV2",
     "MemoryV2",
     "MorseV2",
     "PasswordV2",
@@ -170,11 +165,16 @@
     "alphabeticOrder",
     "TDSAmogus",
     "impostor",
-    "LightsOut"
+    "LightsOut",
+    "algebra"
   ],
   "EnabledList": [
     "OnlyConnectModule",
-    "BlindAlleyModule"
+    "BlindAlleyModule",
+    "shapeshift",
+    "WordSearchModule",
+    "MazeV2",
+    "LEDEnc"
   ],
   "Operation": 0
 }

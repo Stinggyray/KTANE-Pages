@@ -159,10 +159,14 @@ let vanillasAltManuals = {
 }
 
 let victoriaAltManuals = {
-
+	"LED Encryption": "LED Encryption lookup table (JakkOfKlubs)",
 }
 let crimAltManuals = {
-
+	"Adventure Game": "Adventure Game condensed (samfundev)",
+	"Backgrounds": "Backgrounds condensed (ZekNikZ)",
+	"Number Pad": "Number Pad lookup table (CaitSith2)",
+	"The Jukebox": "The Jukebox optimized (Timwi)",
+	"Connection Check": "Connection Check optimized (Elias)"
 }
 let terpAltManuals = {
 
