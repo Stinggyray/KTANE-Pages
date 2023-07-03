@@ -166,7 +166,9 @@ let crimAltManuals = {
 	"Backgrounds": "Backgrounds condensed (ZekNikZ)",
 	"Number Pad": "Number Pad lookup table (CaitSith2)",
 	"The Jukebox": "The Jukebox optimized (Timwi)",
-	"Connection Check": "Connection Check optimized (Elias)"
+	"Connection Check": "Connection Check optimized (Elias)",
+	"Astrology": "Astrology lookup table (Elias & samfundev)",
+
 }
 let terpAltManuals = {
 
