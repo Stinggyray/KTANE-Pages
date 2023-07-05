@@ -64,7 +64,7 @@
             </div>
             <div class="page-content">
                 <pre><code>
-RULES   (round away from zero)
+RULES   (round to nearest integer away from zero)
 
 if (Paper + Plastic + Metal &gt; 695): //Rule 1
     Recycle(everything)
@@ -96,7 +96,7 @@ if (Paper &lt; 65): //Rule 6
         Recycle(1 x Paper)
         Paper = 0
     else
-        Waste(Paper / 3) //Round this up!!
+        Waste(Paper / 3) //Round to nearest int!
         Paper = 2/3 x Paper
 
 Leftovers = Paper + Plastic + Metal
