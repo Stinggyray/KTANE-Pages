@@ -65,6 +65,7 @@ let universalAltManuals = {
 	"Probing": "Probing condensed (Stinggyray)",
 	"Rock-Paper-Scissors-Lizard-Spock": "Rock-Paper-Scissors-Lizard-Spock embellished (Rexkix)",
 	"Switches": "Switches embellished (Rexkix)",
+	"Text Field": "Text Field optimized (Timwi)",
 	"The Bulb": "The Bulb lookup table (Elias)",
 	"Third Base": "Third Base alphabetized (Timwi)",
 	"Wire Placement": "Wire Placement embellished (Timwi)",
