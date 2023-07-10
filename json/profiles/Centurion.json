@@ -70,12 +70,12 @@
     "NotColoredSquaresModule",
     "TDSAmogus",
     "impostor",
-    "LightsOut"
+    "LightsOut",
+    "buttonMasherNeedy",
+    "needycrafting"
   ],
   "EnabledList": [
     "NeedyBeer",
-    "buttonMasherNeedy",
-    "needycrafting",
     "VentGasTranslated",
     "spwiz3DMaze",
     "AdjacentLettersModule",
