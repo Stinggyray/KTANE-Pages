@@ -71,7 +71,7 @@ if (Paper + Plastic + Metal &gt; 695): //Rule 1
     DONE
 else if (Metal &gt; 200): //Rule 2
     Recycle(0.75 × Metal)
-    Metal = 0.25 x Metal
+    Waste(0.25 x Metal)
 else if (Metal &lt; Paper): //Rule 3
     Recycle(1 x Paper)
     Paper = 0
