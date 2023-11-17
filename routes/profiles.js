@@ -135,7 +135,7 @@ let yoshiAltManuals = {
 	"Sea Shells": "Sea Shells lookup table (JakkOfKlubs)",
 	"Semaphore": "Semaphore optimized (Nanthelas)",
 	"Silly Slots": "Silly Slots optimized (WhiteShadowZz)",
-	//"Square Button": "Square Button optimized (Timwi)",
+	"Square Button": "Square Button optimized (Timwi)",
 	"The Festive Jukebox": "The Festive Jukebox optimized (Timwi)",
 	"The Jukebox": "The Jukebox optimized (Timwi)",
 	"The Screw": "The Screw condensed (JakkOfKlubs)",
