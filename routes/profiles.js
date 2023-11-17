@@ -8,6 +8,7 @@ let crim = require('../json/profiles/Crim.json');
 let terp = require('../json/profiles/Terp.json');
 let kyler = require('../json/profiles/Kyler.json');
 let centurion = require('../json/profiles/Centurion.json');
+let bones = require('../json/profiles/Bones.json');
 
 let modules = require('../json/modules.json');
 
@@ -19,13 +20,15 @@ let baseNameChanges = {
 	"Passwords Translated": "Password all languages condensed (S.)",
 	"Venting Gas Translated": "Venting Gas all languages condensed (S.)",
 	"Who's on First Translated": "Who's on First all languages condensed (S.)",
+	"Who's That Monsplode?": "Who's That Monsplode"
 }
 let altIcons = {
 	"Passwords Translated": "Password",
 	"Big Button Translated": "The Button",
 	"Who's on First Translated": "Who's on First",
 	"Morse Code Translated": "Morse Code",
-	"Venting Gas Translated": "Venting Gas"
+	"Venting Gas Translated": "Venting Gas",
+	"Who's That Monsplode?": "Who's That Monsplode"
 }
 let altNames = {
 	"Big Button Translated": "The Button Translated"
@@ -70,6 +73,7 @@ let universalAltManuals = {
 	"The Bulb": "The Bulb lookup table (Elias)",
 	"Third Base": "Third Base alphabetized (Timwi)",
 	"Wire Placement": "Wire Placement embellished (Timwi)",
+	"Who's That Monsplode?": "Who's That Monsplode colored",
 	"Prime Encryption": "Prime Encryption lookup table (Eltrick)",
 	"Zoo": "Zoo embellished (samfundev)"
 }
@@ -177,6 +181,9 @@ let terpAltManuals = {
 let kylerAltManuals = {
 
 }
+let bonesAltManuals = {
+
+}
 
 let centurionList = JSON.parse(JSON.stringify(centurion.EnabledList));
 centurionList = new Set(centurionList.map((s) => modules[s]).sort((a, b) => {
@@ -222,6 +229,7 @@ victoria = transcodeProfile(victoria, victoriaAltManuals);
 crim = transcodeProfile(crim, crimAltManuals);
 terp = transcodeProfile(terp, terpAltManuals);
 kyler = transcodeProfile(kyler, kylerAltManuals);
+bones = transcodeProfile(bones, bonesAltManuals);
 
 module.exports = (name) => {
 	switch(name) {
@@ -235,5 +243,6 @@ module.exports = (name) => {
 		case "vanillas": return vanillas;
 		case "flaw": return flaw;
 		case "kyler": return kyler;
+		case "bones": return bones;
 	}
 }

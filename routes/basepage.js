@@ -82,7 +82,8 @@ let phrases = [
 	"ඞ",
 	"PERO A SCROOGE",
 	"SEA SELLS SHE SELLS ON DEEZ NUTS",
-	"I'd like some ice cream, please. Grunkle Squeaky flavor"
+	"I'd like some ice cream, please. Grunkle Squeaky flavor",
+	"Who put a fucking 20x20 Rubik's Cube on the bomb?"
 ]
 
 let profiles = require('./profiles.js');
@@ -124,8 +125,8 @@ let moduleList = [
 		gradient: "from-blue-400 to-fuchsia-400"
 	},
 	{
-		name: "Kyler",
-		profiles: profiles('kyler'),
+		name: "Bones",
+		profiles: profiles('bones'),
 		gradient: "from-fuchsia-400 to-purple-400"
 	},
 	{

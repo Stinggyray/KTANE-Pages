@@ -33,7 +33,6 @@
     "Painting",
     "spwizPerspectivePegs",
     "poetry",
-    "Probing",
     "radiator",
     "resistors",
     "RubiksCubeModule",
@@ -67,14 +66,14 @@
     "calcModule",
     "logicGates",
     "FlavorText",
-    "DoubleOhModule",
     "FlavorTextCruel",
     "greatVoid",
     "NotColoredSquaresModule",
     "TDSAmogus",
     "impostor",
     "LightsOut",
-    "MarbleTumbleModule"
+    "MarbleTumbleModule",
+    "BrokenButtonsModule"
   ],
   "EnabledList": [
     "MafiaModule",
@@ -171,10 +170,11 @@
     "TheClockModule",
     "FriendshipModule",
     "Microcontroller",
-    "BrokenButtonsModule",
     "MorseCodeTranslated",
     "ZooModule",
-    "WhosOnFirstTranslated"
+    "WhosOnFirstTranslated",
+    "Probing",
+    "DoubleOhModule"
   ],
   "Operation": 0
 }
