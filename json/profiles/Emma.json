@@ -48,9 +48,7 @@
     "TurnTheKeyAdvanced",
     "TurnTheKey",
     "MorseCodeTranslated",
-    "WhosOnFirstTranslated",
     "TicTacToeModule",
-    "ThirdBase",
     "screw",
     "TheGamepadModule",
     "TheBulbModule",
@@ -174,7 +172,9 @@
     "CreationModule",
     "wastemanagement",
     "LightCycleModule",
-    "PasswordV2"
+    "PasswordV2",
+    "WhosOnFirstTranslated",
+    "ThirdBase"
   ],
   "Operation": 0
 }

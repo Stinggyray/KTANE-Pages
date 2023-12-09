@@ -9,6 +9,7 @@ let terp = require('../json/profiles/Terp.json');
 let kyler = require('../json/profiles/Kyler.json');
 let centurion = require('../json/profiles/Centurion.json');
 let bones = require('../json/profiles/Bones.json');
+let jessie = require('../json/profiles/Jessie.json');
 
 let modules = require('../json/modules.json');
 
@@ -184,6 +185,9 @@ let kylerAltManuals = {
 let bonesAltManuals = {
 
 }
+let jessieAltManuals = {
+
+}
 
 let centurionList = JSON.parse(JSON.stringify(centurion.EnabledList));
 centurionList = new Set(centurionList.map((s) => modules[s]).sort((a, b) => {
@@ -230,6 +234,7 @@ crim = transcodeProfile(crim, crimAltManuals);
 terp = transcodeProfile(terp, terpAltManuals);
 kyler = transcodeProfile(kyler, kylerAltManuals);
 bones = transcodeProfile(bones, bonesAltManuals);
+jessie = transcodeProfile(jessie, jessieAltManuals);
 
 module.exports = (name) => {
 	switch(name) {
@@ -244,5 +249,6 @@ module.exports = (name) => {
 		case "flaw": return flaw;
 		case "kyler": return kyler;
 		case "bones": return bones;
+		case "jessie": return jessie;
 	}
 }

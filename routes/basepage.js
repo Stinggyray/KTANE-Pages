@@ -83,7 +83,15 @@ let phrases = [
 	"PERO A SCROOGE",
 	"SEA SELLS SHE SELLS ON DEEZ NUTS",
 	"I'd like some ice cream, please. Grunkle Squeaky flavor",
-	"Who put a fucking 20x20 Rubik's Cube on the bomb?"
+	"Who put a fucking 20x20 Rubik's Cube on the bomb?",
+	"We trust you will be a great asset to the Company",
+	"LINDA WHY",
+	"HELP IT'S BEES",
+	"THIS IS KTANE MOTHERFUCKER. YOU BLOW UP YOU DIE",
+	"You have struck on too many needys. Welcome to our disciplinary process",
+	"*sirens blaring*<br>\"NO FLAW, IT'S FAST MATH, NOT FAST METH\"",
+	"Sorry the website isn't working. Its car broke down",
+	"WELCOME TO BOMB DUMP 61"
 ]
 
 let profiles = require('./profiles.js');
@@ -139,6 +147,11 @@ let moduleList = [
 		profiles: profiles('vanillas'),
 		gradient: "from-violet-500 to-indigo-400"
 	},
+	{
+		name: "J E S S I E",
+		profiles: profiles("jessie"),
+		gradient: "from-pink-400 to-gray-200"
+	}
 ]
 
 module.exports.set = (app) => {
