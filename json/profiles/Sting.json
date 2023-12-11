@@ -31,7 +31,6 @@
     "BlackHoleModule",
     "Painting",
     "iPhone",
-    "PerplexingWiresModule",
     "WordSearchModulePL",
     "TurnTheKeyAdvanced",
     "TurnTheKey",
@@ -172,7 +171,8 @@
     "shapeshift",
     "ZooModule",
     "ChordQualities",
-    "neutralization"
+    "neutralization",
+    "PerplexingWiresModule"
   ],
   "Operation": 0
 }

@@ -100,6 +100,7 @@ let stingAltManuals = {
 	"Microcontroller": "Microcontroller optimized (Elias)",
 	"Morsematics": "Morsematics optimized (samfundev)",
 	"Neutralization": "Neutralization lookup table (Timwi)",
+	"Perplexing Wires": "Perplexing Wires lookup table (ZekNikZ)",
 	"Perspective Pegs": "Perspective Pegs condensed (Stinggyray)",
 	"Resistors": "Resistors condensed (Nanthelas)",
 	"Rubik's Cube": "Rubik's Cube lookup table (Katarina)",
