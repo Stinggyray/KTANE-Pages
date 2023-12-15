@@ -91,7 +91,9 @@ let phrases = [
 	"You have struck on too many needys. Welcome to our disciplinary process",
 	"*sirens blaring*<br>\"NO FLAW, IT'S FAST MATH, NOT FAST METH\"",
 	"Sorry the website isn't working. Its car broke down",
-	"WELCOME TO BOMB DUMP 61"
+	"WELCOME TO BOMB DUMP 61",
+	"Where's Maze Translated?",
+	""
 ]
 
 let profiles = require('./profiles.js');

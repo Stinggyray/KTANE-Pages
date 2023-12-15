@@ -45,7 +45,7 @@ let universalAltManuals = {
 	"Blind Alley": "Blind Alley condensed (Timwi)",
 	"Boolean Venn Diagram": "Boolean Venn Diagram interactive (samfundev)",
 	"Bitwise Operations": "Bitwise Operations condensed (LeGeND)",
-	"Chess": "Chess interactive (samfundev)",
+	"Chess": "Chess optimized (Timwi)",
 	"Colored Squares": "Colored Squares colored (samfundev)",
 	"Colour Flash": "Colour Flash optimized (Stinggyray)",
 	"Combination Lock": "Combination Lock condensed (Stinggyray)",
@@ -76,6 +76,7 @@ let universalAltManuals = {
 	"Third Base": "Third Base alphabetized (Timwi)",
 	"Wire Placement": "Wire Placement embellished (Timwi)",
 	"Who's That Monsplode?": "Who's That Monsplode colored",
+	"Word Search": "Word Search lookup table (Elias)",
 	"Prime Encryption": "Prime Encryption lookup table (Eltrick)",
 	"Zoo": "Zoo embellished (samfundev)"
 }
@@ -114,8 +115,7 @@ let stingAltManuals = {
 	"The Jukebox": "The Jukebox optimized (Timwi)",
 	"Two Bits": "Two Bits optimized (Nanthelas)",
 	"Waste Management": "Waste Management in code form (Timwi & Stinggyray)",
-	"Web Design": "Web Design optimized (samfundev)",
-	"Word Search": "Word Search lookup table (Elias)"
+	"Web Design": "Web Design optimized (samfundev)"
 }
 let yoshiAltManuals = {
 	"Adventure Game": "Adventure Game condensed (samfundev)",
