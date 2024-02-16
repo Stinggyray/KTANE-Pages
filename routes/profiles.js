@@ -35,6 +35,7 @@ let altNames = {
 	"Big Button Translated": "The Button Translated"
 }
 let universalAltManuals = {
+	"Adventure Game": "Adventure Game condensed (samfundev)",
 	"Cheap Checkout": "Cheap Checkout optimized (Timwi)",
 	"3D Maze": "3D Maze optimized (Stinggyray)",
 	"Algebra": "Algebra condensed (Stinggyray)",
@@ -83,7 +84,6 @@ let universalAltManuals = {
 }
 let stingAltManuals = {
 	"Adjacent Letters": "Adjacent Letters lookup table (samfundev & Elias)",
-	"Adventure Game": "Adventure Game condensed (samfundev)",
 	"Astrology": "Astrology lookup table (Elias & samfundev)",
 	"Backgrounds": "Backgrounds condensed (ZekNikZ)",
 	"Bitmaps": "Bitmaps condensed (Stinggyray)",
@@ -118,7 +118,6 @@ let stingAltManuals = {
 	"Web Design": "Web Design optimized (samfundev)"
 }
 let yoshiAltManuals = {
-	"Adventure Game": "Adventure Game condensed (samfundev)",
 	"Astrology": "Astrology lookup table (Elias & samfundev)",
 	"Chess": "Chess optimized (Timwi)",
 	"Color Generator": "Color Generator lookup table (Timwi)",
