@@ -93,7 +93,7 @@ let phrases = [
 	"Sorry the website isn't working. Its car broke down",
 	"WELCOME TO BOMB DUMP 61",
 	"Where's Maze Translated?",
-	""
+	"STING, WEBSITE STATUS? STING, WEBSITE STATUS? STING, WEBSITE STATUS? STING, WEBSITE STATUS? STING, WEBSITE STATUS?"
 ]
 
 let profiles = require('./profiles.js');

@@ -34,7 +34,6 @@
     "radiator",
     "resistors",
     "RubiksCubeModule",
-    "SimonV2",
     "Sink",
     "subways",
     "theSwan",
@@ -175,7 +174,8 @@
     "iceCreamModule",
     "BrokenButtonsModule",
     "CoordinatesModule",
-    "MorseV2"
+    "MorseV2",
+    "SimonV2"
   ],
   "Operation": 0
 }
