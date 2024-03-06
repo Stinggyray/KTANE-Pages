@@ -4,11 +4,9 @@
     "BattleshipModule",
     "BigCircle",
     "algebra",
-    "BlackHoleModule",
     "booleanVennModule",
     "chordProgressions",
     "ColorMorseModule",
-    "CreationModule",
     "CruelPianoKeys",
     "DecoloredSquaresModule",
     "TheDigitModule",
@@ -29,11 +27,8 @@
     "kookyKeypadModule",
     "monsplodeCards",
     "Painting",
-    "spwizPerspectivePegs",
     "poetry",
     "radiator",
-    "resistors",
-    "RubiksCubeModule",
     "Sink",
     "subways",
     "theSwan",
@@ -44,7 +39,6 @@
     "UncoloredSquaresModule",
     "VaricoloredSquaresModule",
     "wastemanagement",
-    "webDesign",
     "wire",
     "WordScrambleModule",
     "WordSearchModulePL",
@@ -69,7 +63,6 @@
     "impostor",
     "LightsOut",
     "MarbleTumbleModule",
-    "SimonScreamsModule",
     "krazyTalk"
   ],
   "EnabledList": [
@@ -174,8 +167,15 @@
     "iceCreamModule",
     "BrokenButtonsModule",
     "CoordinatesModule",
+    "SimonV2",
     "MorseV2",
-    "SimonV2"
+    "SimonScreamsModule",
+    "resistors",
+    "CreationModule",
+    "spwizPerspectivePegs",
+    "RubiksCubeModule",
+    "BlackHoleModule",
+    "webDesign"
   ],
   "Operation": 0
 }
